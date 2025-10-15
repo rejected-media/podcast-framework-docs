@@ -798,7 +798,6 @@ npm run build
 
 - **[Sanity Theme Configuration](/sanity/theme-configuration/)** - Configure themes in Sanity
 - **[Customization](/customization/theming/)** - Theming guide
-- **[BaseLayout](/api/layouts/)** - Uses theme system
 
 ## Next Steps
 

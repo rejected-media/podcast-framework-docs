@@ -716,7 +716,6 @@ test('slugify handles multiple spaces', () => {
 
 - **[Sanity Helpers](/api/sanity-helpers/)** - Higher-level data fetching
 - **[Server Services](/api/server-services/)** - Use utilities in services
-- **[TypeScript](/advanced/typescript/)** - Type definitions
 
 ## Next Steps
 

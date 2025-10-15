@@ -423,7 +423,6 @@ const podcast = await getPodcast();
 ## Related Components
 
 - **[Footer](/components/footer/)** - Companion footer component
-- **[BaseLayout](/api/layouts/)** - Uses Header automatically
 
 ## Next Steps
 

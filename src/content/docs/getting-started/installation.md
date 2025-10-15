@@ -466,7 +466,7 @@ npm outdated
 
 ### Breaking Changes
 
-Check the [Changelog](/contributing/changelog/) before updating to a new major version.
+Always check the GitHub releases page before updating to a new major version.
 
 ## Next Steps
 

@@ -256,7 +256,6 @@ Ask in [GitHub Discussions](https://github.com/podcast-framework/podcast-framewo
 
 - **[Development Setup](/contributing/development-setup/)** - Detailed setup guide
 - **[Roadmap](/contributing/roadmap/)** - Future plans
-- **[Changelog](/contributing/changelog/)** - Version history
 
 ## Thank You!
 

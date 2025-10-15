@@ -292,8 +292,6 @@ const guestWithCompany = extendGuestSchema([
 ]);
 ```
 
-**See:** [Schema Extensions](/customization/schema-extensions/) for more examples.
-
 ## Schema Validation
 
 Schemas include built-in validation:
@@ -355,10 +353,8 @@ preview: {
 
 - **[Setup](/sanity/setup/)** - Initial Sanity configuration
 - **[Content Management](/sanity/content-management/)** - Add content to Sanity
-- **[Schema Extensions](/customization/schema-extensions/)** - Extend schemas
 
 ## Next Steps
 
 - **[Content Management](/sanity/content-management/)** - Start adding content
 - **[Theme Configuration](/sanity/theme-configuration/)** - Customize theme
-- **[Schema Extensions](/customization/schema-extensions/)** - Add custom fields

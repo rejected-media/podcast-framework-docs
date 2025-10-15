@@ -398,7 +398,6 @@ Social links open in new tabs safely:
 
 - **[Header](/components/header/)** - Companion header component
 - **[NewsletterSignup](/components/newsletter-signup/)** - Use in newsletter slot
-- **[BaseLayout](/api/layouts/)** - Uses Footer automatically
 
 ## Next Steps
 

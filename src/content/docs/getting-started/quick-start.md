@@ -205,9 +205,8 @@ Now that your site is running, you can:
 
 1. **[Deploy to production](/deployment/cloudflare-pages/)** - Go live in 5 minutes
 2. **[Customize components](/customization/component-overrides/)** - Make it yours
-3. **[Extend schemas](/customization/schema-extensions/)** - Add custom fields
-4. **[Set up email](/api/server-services/)** - Enable newsletter and contributions
-5. **[Add analytics](/getting-started/configuration/)** - Track your visitors
+3. **[Set up email](/api/server-services/)** - Enable newsletter and contributions
+4. **[Add analytics](/getting-started/configuration/)** - Track your visitors
 
 ## Common Next Steps
 

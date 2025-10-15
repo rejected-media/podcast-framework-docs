@@ -1,0 +1,115 @@
+---
+title: Podcast Framework
+description: Build beautiful podcast websites with Astro, TypeScript, and Sanity CMS
+template: splash
+hero:
+  tagline: Build beautiful podcast websites in minutes, not weeks
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Get Started
+      link: /getting-started/quick-start/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/podcast-framework/podcast-framework
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Why Podcast Framework?
+
+<CardGrid stagger>
+  <Card title="⚡ Fast to Deploy" icon="rocket">
+    Get a production-ready podcast website up and running in under 10 minutes with our CLI tool and template.
+  </Card>
+  <Card title="🎨 Fully Customizable" icon="pencil">
+    Override components, extend schemas, and customize themes without fighting the framework.
+  </Card>
+  <Card title="📱 CMS-Driven" icon="setting">
+    Manage episodes, guests, and site configuration through Sanity Studio's intuitive interface.
+  </Card>
+  <Card title="🚀 Built for Performance" icon="approve-check">
+    Static-first architecture with SSG, edge-ready deployment, and optimized builds.
+  </Card>
+  <Card title="☁️ Platform Agnostic" icon="puzzle">
+    Deploy to Cloudflare Pages, Netlify, or Vercel with zero platform-specific code.
+  </Card>
+  <Card title="🔒 Production Ready" icon="star">
+    Battle-tested on Strange Water podcast with 69 episodes, 72 guests, and thousands of visitors.
+  </Card>
+</CardGrid>
+
+## Features
+
+- **8 Pre-built Components** - Header, Footer, Newsletter, Episode Search, Transcript Viewer, and more
+- **Complete Page Templates** - Episodes, guests, about, contribute, and more
+- **Type-Safe** - Full TypeScript support with strict mode
+- **RSS Feed Support** - Import episodes from existing RSS feeds
+- **Email Integration** - Newsletter signups via ConvertKit and contribution forms via Resend
+- **SEO Optimized** - Meta tags, sitemaps, and semantic HTML out of the box
+- **Mobile Responsive** - Beautiful on all devices
+- **Dark Mode Ready** - Automatic dark mode support
+- **Extensible** - Extend Sanity schemas, override components, add custom features
+
+## Quick Example
+
+```bash
+# Create a new podcast site
+npm create podcast-framework my-podcast
+
+# Start development server
+cd my-podcast
+npm run dev
+
+# Visit http://localhost:4321
+```
+
+Your podcast site is now running with:
+- ✅ Beautiful homepage
+- ✅ Episode archive with search
+- ✅ Guest directory
+- ✅ About page
+- ✅ Newsletter signup
+- ✅ Contribution form
+
+## Tech Stack
+
+Built on proven, modern technologies:
+
+- **[Astro](https://astro.build)** - Fast, content-focused web framework
+- **[TypeScript](https://www.typescriptlang.org)** - Type-safe development
+- **[Sanity](https://www.sanity.io)** - Structured content management
+- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
+
+## Who It's For
+
+Perfect for:
+- **Podcast Creators** - Focus on content, not code
+- **Developers** - Extensible architecture with TypeScript
+- **Agencies** - Deploy multiple podcast sites quickly
+- **Migrators** - Move from Wordpress, Squarespace, or custom solutions
+
+## Open Source
+
+MIT licensed and built in the open. Contributions welcome!
+
+- [Framework Repository](https://github.com/podcast-framework/podcast-framework)
+- [Template Repository](https://github.com/podcast-framework/podcast-template)
+- [Documentation Repository](https://github.com/podcast-framework/podcast-framework-docs)
+
+## Ready to Build?
+
+<CardGrid>
+  <Card title="Quick Start" icon="rocket">
+    [Get your podcast site running in 10 minutes →](/getting-started/quick-start/)
+  </Card>
+  <Card title="Component Reference" icon="open-book">
+    [Explore the 8 pre-built components →](/components/overview/)
+  </Card>
+  <Card title="Deployment" icon="rocket">
+    [Deploy to Cloudflare, Netlify, or Vercel →](/deployment/cloudflare-pages/)
+  </Card>
+</CardGrid>

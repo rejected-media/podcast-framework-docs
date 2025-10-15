@@ -1,0 +1,26 @@
+{
+  "name": "podcast-framework-docs",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Documentation site for Podcast Framework - Build beautiful podcast websites with Astro, TypeScript, and Sanity CMS",
+  "author": "Podcast Framework",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/podcast-framework/podcast-framework-docs"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/starlight": "^0.36.0",
+    "astro": "^5.6.1",
+    "sharp": "^0.34.2",
+    "typescript": "^5.9.3"
+  }
+}

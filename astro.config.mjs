@@ -4,13 +4,13 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://docs.podcastframework.dev',
+	site: 'https://podcast-framework.rejected.media',
 	integrations: [
 		starlight({
 			title: 'Podcast Framework',
 			description: 'Build beautiful podcast websites with Astro, TypeScript, and Sanity CMS',
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/podcast-framework/podcast-framework' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/rejected-media/podcast-framework' },
 			],
 			sidebar: [
 				{

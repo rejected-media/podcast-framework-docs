@@ -1,49 +1,96 @@
-# Starlight Starter Kit: Basics
+# Podcast Framework Documentation
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
+Official documentation for **Podcast Framework** - Build beautiful podcast websites with Astro, TypeScript, and Sanity CMS.
+
+## 🌐 Live Site
+
+- **Production:** TBD (coming soon)
+- **Local Dev:** http://localhost:4321
+
+## 📚 What's Inside
+
+Comprehensive documentation covering:
+
+- **Getting Started** - Overview, Quick Start, Installation, Project Structure, Configuration
+- **Components** - 8 pre-built Astro components with full API documentation
+- **API Reference** - Utilities, theme system, Sanity helpers, hosting adapter
+- **Customization** - Component overrides, theming, schema extensions
+- **Sanity CMS** - Setup, schemas, content management
+- **Deployment** - Cloudflare Pages, Netlify, Vercel guides
+- **Advanced** - CLI tool, migration guides, TypeScript, testing
+- **Examples** - Real-world usage examples
+- **Contributing** - Development setup and guidelines
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
 ```
-npm create astro@latest -- --template starlight
-```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📊 Status
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
+- **Pages:** 11 documentation pages
+- **Words:** 1,719+ indexed
+- **Build Status:** ✅ Zero errors
+- **Search:** Fully indexed with Pagefind
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command | Action |
+|---------|--------|
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview build locally |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🗂️ Project Structure
 
-## 👀 Want to learn more?
+```
+src/
+├── content/
+│   └── docs/
+│       ├── getting-started/     # 5 pages (complete)
+│       ├── components/          # 3 pages (in progress)
+│       ├── api/                 # TBD
+│       ├── customization/       # TBD
+│       ├── sanity/              # TBD
+│       ├── deployment/          # TBD
+│       ├── advanced/            # TBD
+│       ├── examples/            # TBD
+│       └── contributing/        # TBD
+├── assets/                      # Images and media
+└── content.config.ts            # Content configuration
+```
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+## 🔗 Related Repositories
+
+- [Podcast Framework](https://github.com/podcast-framework/podcast-framework) - Main framework repository
+- [Podcast Template](https://github.com/podcast-framework/podcast-template) - Template repository
+
+## 📝 Contributing
+
+Documentation improvements are welcome! See our [Contributing Guidelines](src/content/docs/contributing/guidelines.md) (coming soon).
+
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build) - Static site framework
+- [Starlight](https://starlight.astro.build) - Documentation theme
+- [TypeScript](https://www.typescriptlang.org) - Type safety
+- [Pagefind](https://pagefind.app) - Search functionality
+
+## 📄 License
+
+MIT License - see LICENSE file for details
+
+## 🤖 Generated with Claude Code
+
+This documentation site was built with assistance from [Claude Code](https://claude.com/claude-code).

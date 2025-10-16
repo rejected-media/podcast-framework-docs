@@ -51,7 +51,7 @@ cd my-podcast
 npm install
 ```
 
-This uses the [podcast-template](https://github.com/podcast-framework/podcast-template) repository as a starting point.
+This uses the [podcast-template](https://github.com/rejected-media/podcast-template) repository as a starting point.
 
 ### Method 2: Clone Template
 
@@ -59,7 +59,7 @@ Clone the template repository directly:
 
 ```bash
 # Clone template
-git clone https://github.com/podcast-framework/podcast-template.git my-podcast
+git clone https://github.com/rejected-media/podcast-template.git my-podcast
 
 # Navigate to project
 cd my-podcast
@@ -76,7 +76,7 @@ npm install
 
 Use GitHub's template feature:
 
-1. Go to [podcast-template](https://github.com/podcast-framework/podcast-template)
+1. Go to [podcast-template](https://github.com/rejected-media/podcast-template)
 2. Click **"Use this template"**
 3. Click **"Create a new repository"**
 4. Name your repository
@@ -479,6 +479,6 @@ Now that you have Podcast Framework installed:
 
 ## Getting Help
 
-- **[GitHub Discussions](https://github.com/podcast-framework/podcast-framework/discussions)** - Ask questions
-- **[GitHub Issues](https://github.com/podcast-framework/podcast-framework/issues)** - Report installation problems
+- **[GitHub Discussions](https://github.com/rejected-media/podcast-framework/discussions)** - Ask questions
+- **[GitHub Issues](https://github.com/rejected-media/podcast-framework/issues)** - Report installation problems
 - **[Quick Start](/getting-started/quick-start/)** - Simplified guide

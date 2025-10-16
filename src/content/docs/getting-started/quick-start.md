@@ -34,7 +34,7 @@ This will:
 - ✅ Create a `.env.template` file
 
 :::note
-The CLI uses the [podcast-template](https://github.com/podcast-framework/podcast-template) as a starting point, giving you a complete, working podcast site immediately.
+The CLI uses the [podcast-template](https://github.com/rejected-media/podcast-template) as a starting point, giving you a complete, working podcast site immediately.
 :::
 
 ## Step 2: Navigate to Project
@@ -266,8 +266,8 @@ Or use the [Cloudflare Pages dashboard](https://dash.cloudflare.com/) for automa
 
 Stuck? Here's where to get help:
 
-- **[GitHub Discussions](https://github.com/podcast-framework/podcast-framework/discussions)** - Ask questions
-- **[GitHub Issues](https://github.com/podcast-framework/podcast-framework/issues)** - Report bugs
+- **[GitHub Discussions](https://github.com/rejected-media/podcast-framework/discussions)** - Ask questions
+- **[GitHub Issues](https://github.com/rejected-media/podcast-framework/issues)** - Report bugs
 - **[Documentation](/getting-started/overview/)** - Read the full docs
 - **[Examples](/examples/basic-podcast/)** - See example projects
 

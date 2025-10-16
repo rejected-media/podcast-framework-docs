@@ -161,6 +161,6 @@ Ready to build your podcast site?
 
 ## Questions?
 
-- [GitHub Discussions](https://github.com/podcast-framework/podcast-framework/discussions)
-- [GitHub Issues](https://github.com/podcast-framework/podcast-framework/issues)
+- [GitHub Discussions](https://github.com/rejected-media/podcast-framework/discussions)
+- [GitHub Issues](https://github.com/rejected-media/podcast-framework/issues)
 - [Contributing Guide](/contributing/guidelines/)

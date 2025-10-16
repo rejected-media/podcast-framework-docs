@@ -73,8 +73,8 @@ src/
 
 ## 🔗 Related Repositories
 
-- [Podcast Framework](https://github.com/podcast-framework/podcast-framework) - Main framework repository
-- [Podcast Template](https://github.com/podcast-framework/podcast-template) - Template repository
+- [Podcast Framework](https://github.com/rejected-media/podcast-framework) - Main framework repository
+- [Podcast Template](https://github.com/rejected-media/podcast-template) - Template repository
 
 ## 📝 Contributing
 

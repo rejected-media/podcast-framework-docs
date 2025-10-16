@@ -17,7 +17,7 @@ Set up your local environment for contributing to Podcast Framework.
 ## Clone Repository
 
 ```bash
-git clone https://github.com/podcast-framework/podcast-framework.git
+git clone https://github.com/rejected-media/podcast-framework.git
 cd podcast-framework
 ```
 
@@ -142,7 +142,7 @@ npm run type-check
 The template repository serves as an example:
 
 ```bash
-git clone https://github.com/podcast-framework/podcast-template.git
+git clone https://github.com/rejected-media/podcast-template.git
 cd podcast-template
 npm install
 npm run dev
@@ -190,8 +190,8 @@ npm publish
 
 ## Getting Help
 
-- **Questions:** [GitHub Discussions](https://github.com/podcast-framework/podcast-framework/discussions)
-- **Bugs:** [GitHub Issues](https://github.com/podcast-framework/podcast-framework/issues)
+- **Questions:** [GitHub Discussions](https://github.com/rejected-media/podcast-framework/discussions)
+- **Bugs:** [GitHub Issues](https://github.com/rejected-media/podcast-framework/issues)
 - **Chat:** Discord (coming soon)
 
 ## Related

@@ -13,7 +13,7 @@ Thank you for your interest in contributing to Podcast Framework! This guide exp
 
 Found a bug? Report it on GitHub:
 
-1. Check [existing issues](https://github.com/podcast-framework/podcast-framework/issues)
+1. Check [existing issues](https://github.com/rejected-media/podcast-framework/issues)
 2. If not found, create new issue
 3. Include:
    - Clear description
@@ -26,7 +26,7 @@ Found a bug? Report it on GitHub:
 
 Have an idea? Create a feature request:
 
-1. Check [discussions](https://github.com/podcast-framework/podcast-framework/discussions)
+1. Check [discussions](https://github.com/rejected-media/podcast-framework/discussions)
 2. Create new discussion in "Ideas" category
 3. Explain:
    - Problem you're solving
@@ -51,7 +51,7 @@ Submit pull requests:
 
 Documentation improvements welcome:
 
-1. Fork [podcast-framework-docs](https://github.com/podcast-framework/podcast-framework-docs)
+1. Fork [podcast-framework-docs](https://github.com/rejected-media/podcast-framework-docs)
 2. Make changes to `.md` files
 3. Test locally: `npm run dev`
 4. Create pull request
@@ -59,15 +59,15 @@ Documentation improvements welcome:
 ### 5. Help Others
 
 Answer questions in:
-- [GitHub Discussions](https://github.com/podcast-framework/podcast-framework/discussions)
-- [GitHub Issues](https://github.com/podcast-framework/podcast-framework/issues)
+- [GitHub Discussions](https://github.com/rejected-media/podcast-framework/discussions)
+- [GitHub Issues](https://github.com/rejected-media/podcast-framework/issues)
 
 ## Development Setup
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/podcast-framework/podcast-framework.git
+git clone https://github.com/rejected-media/podcast-framework.git
 cd podcast-framework
 ```
 
@@ -250,7 +250,7 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ## Questions?
 
-Ask in [GitHub Discussions](https://github.com/podcast-framework/podcast-framework/discussions).
+Ask in [GitHub Discussions](https://github.com/rejected-media/podcast-framework/discussions).
 
 ## Related
 

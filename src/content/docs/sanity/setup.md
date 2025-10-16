@@ -5,158 +5,74 @@ description: Set up Sanity CMS for your podcast website
 
 # Sanity Setup
 
-This guide walks you through setting up Sanity CMS for your podcast website, from creating a Sanity account to deploying schemas.
+The Podcast Framework template comes with Sanity Studio **pre-configured**. You just need to create a Sanity project and add your credentials.
 
 ## Prerequisites
 
 - Sanity account ([sign up free](https://www.sanity.io/))
-- Podcast Framework project created
+- Podcast Framework template cloned
 - Node.js 18+ installed
 
-## Step-by-Step Setup
+## Quick Setup (3 Steps)
 
-### Step 1: Create Sanity Account
+### Step 1: Create Sanity Project
 
-1. Go to [sanity.io](https://www.sanity.io/)
-2. Click "Get started"
-3. Sign up with GitHub, Google, or email
-4. Verify your email
-
-### Step 2: Initialize Sanity Project
-
-From your podcast project directory:
-
-```bash
-npx sanity@latest init
-```
-
-**Answer the prompts:**
-
-```
-? Create new project? → Yes
-? Project name → my-podcast (or your podcast name)
-? Use default dataset configuration? → Yes
-? Output path → ./sanity (press Enter)
-? Select project template → Clean project with no predefined schemas
-```
+1. Go to [sanity.io/manage](https://www.sanity.io/manage)
+2. Click **"Create project"**
+3. **Project name:** my-podcast (or your podcast name)
+4. **Dataset:** production (default)
+5. Copy your **Project ID** (looks like `abc123xyz`)
 
 :::tip[Save Your Project ID]
-The CLI outputs your Project ID:
+You'll see your Project ID on the project page:
 ```
-Success! Created project my-podcast (abc123xyz)
+Project ID: abc123xyz
 ```
 
-**Save `abc123xyz`** - you'll need it next!
+**Save this!** You'll need it in the next step.
 :::
 
-### Step 3: Configure Environment Variables
+### Step 2: Configure Environment Variables
 
-Add Sanity credentials to `.env`:
+Copy the template and add your credentials:
 
 ```bash
-PUBLIC_SANITY_PROJECT_ID="abc123xyz"        # From Step 2
+cp .env.template .env.local
+```
+
+Edit `.env.local` and add your Project ID:
+
+```bash
+# For website (public - exposed to client)
+PUBLIC_SANITY_PROJECT_ID="abc123xyz"        # ← Your Project ID here!
 PUBLIC_SANITY_DATASET="production"
 PUBLIC_SANITY_API_VERSION="2024-01-01"
+
+# For Sanity Studio (server-side only)
+SANITY_PROJECT_ID="abc123xyz"               # ← Same Project ID
+SANITY_DATASET="production"
 ```
 
 :::danger[Required]
-Replace `abc123xyz` with your actual Project ID from Step 2!
+Replace `abc123xyz` with your actual Project ID from Step 1!
 :::
 
-### Step 4: Install Sanity Schemas
-
-The framework provides pre-built schemas via `@podcast-framework/sanity-schema`:
+### Step 3: Install Dependencies
 
 ```bash
-npm install @podcast-framework/sanity-schema
+npm install
 ```
 
-### Step 5: Configure Schemas
+That's it! Studio is ready to use.
 
-Edit `sanity/sanity.config.ts`:
+## Running Sanity Studio
 
-```typescript
-import { defineConfig } from 'sanity';
-import { structureTool } from 'sanity/structure';
-import { visionTool } from '@sanity/vision';
+### Local Development
 
-// Import framework schemas
-import { schemas } from '@podcast-framework/sanity-schema';
-
-export default defineConfig({
-  name: 'default',
-  title: 'My Podcast',
-
-  projectId: process.env.PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.PUBLIC_SANITY_DATASET || 'production',
-
-  plugins: [
-    structureTool(),
-    visionTool(),
-  ],
-
-  schema: {
-    types: schemas  // Use framework schemas
-  },
-});
-```
-
-Or edit `sanity/schemas/index.ts`:
-
-```typescript
-// Import framework schemas
-import {
-  episodeSchema,
-  guestSchema,
-  hostSchema,
-  podcastSchema,
-  contributionSchema,
-  themeSchema,
-  homepageConfigSchema,
-  aboutPageConfigSchema
-} from '@podcast-framework/sanity-schema';
-
-export const schemaTypes = [
-  episodeSchema,
-  guestSchema,
-  hostSchema,
-  podcastSchema,
-  contributionSchema,
-  themeSchema,
-  homepageConfigSchema,
-  aboutPageConfigSchema
-];
-```
-
-### Step 6: Deploy Schemas
-
-Deploy schemas to your Sanity project:
+Start Studio locally:
 
 ```bash
-cd sanity
-npx sanity schema deploy
-cd ..
-```
-
-**Output:**
-```
-✔ Deployed schema
-```
-
-This uploads 8 schema types to Sanity:
-- Episode
-- Guest
-- Host
-- Podcast
-- Contribution
-- Theme
-- Homepage Config
-- About Page Config
-
-### Step 7: Start Sanity Studio
-
-```bash
-npm run dev:sanity
+npm run sanity:dev
 ```
 
 Visit **http://localhost:3333** - you should see Sanity Studio!
@@ -171,7 +87,29 @@ Visit **http://localhost:3333** - you should see Sanity Studio!
 - Homepage Config (sidebar)
 - About Page Config (sidebar)
 
-### Step 8: Create Podcast Document
+### Production Deployment
+
+Deploy Studio to Sanity Cloud (free hosting):
+
+```bash
+npm run sanity:deploy
+```
+
+Choose a studio hostname:
+```
+Studio hostname: my-podcast
+✔ Deployed to https://my-podcast.sanity.studio
+```
+
+Now you can access Studio from anywhere at your custom URL!
+
+:::tip[Free Tier]
+Sanity's free tier includes unlimited Studio hosting. You can deploy as many Studios as you want.
+:::
+
+## Creating Content
+
+### Step 1: Create Podcast Document
 
 1. Click **"Podcast"** in sidebar
 2. Click **"Create new Podcast"**
@@ -190,7 +128,7 @@ Visit **http://localhost:3333** - you should see Sanity Studio!
 Create only ONE podcast document. The framework queries for the first podcast document it finds.
 :::
 
-### Step 9: Create Your First Episode
+### Step 2: Create Your First Episode
 
 1. Click **"Episode"** in sidebar
 2. Click **"Create new Episode"**
@@ -208,7 +146,7 @@ Create only ONE podcast document. The framework queries for the first podcast do
    - Mark as featured
 5. Click **"Publish"**
 
-### Step 10: Create a Guest
+### Step 3: Create a Guest
 
 1. Click **"Guest"** in sidebar
 2. Click **"Create new Guest"**
@@ -223,7 +161,7 @@ Create only ONE podcast document. The framework queries for the first podcast do
    - Add LinkedIn URL
 5. Click **"Publish"**
 
-### Step 11: Link Guest to Episode
+### Step 4: Link Guest to Episode
 
 1. Go back to your episode
 2. Scroll to **"Guests"** field
@@ -231,7 +169,7 @@ Create only ONE podcast document. The framework queries for the first podcast do
 4. Select the guest you created
 5. Click **"Publish"**
 
-### Step 12: Verify Setup
+## Verify Setup
 
 Build your site to verify everything works:
 
@@ -253,28 +191,21 @@ npm run dev
 
 Visit http://localhost:4321 - your podcast site should display!
 
-## Sanity Studio
+## Sanity Studio Commands
 
-### Accessing Studio
+The template includes npm scripts for working with Studio:
 
-**Local Development:**
 ```bash
-npm run dev:sanity
+# Local development
+npm run sanity:dev
 # → http://localhost:3333
-```
 
-**Production:**
-Deploy Studio to Sanity's hosting:
+# Deploy to Sanity Cloud
+npm run sanity:deploy
+# → https://your-podcast.sanity.studio
 
-```bash
-cd sanity
-npx sanity deploy
-```
-
-Choose a studio hostname:
-```
-Studio hostname: my-podcast
-✔ Deployed to https://my-podcast.sanity.studio
+# Build Studio for production
+npm run sanity:build
 ```
 
 ### Studio Features
@@ -299,61 +230,69 @@ Studio hostname: my-podcast
 
 ## Configuration Files
 
+The template comes with Sanity pre-configured. Here's what's included:
+
 ### `sanity.config.ts`
 
-Main Sanity configuration:
+Main Sanity configuration (at project root):
 
 ```typescript
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
-import { schemaTypes } from './schemas';
+
+// Import framework schemas
+import {
+  episode,
+  guest,
+  host,
+  podcast,
+  contribution
+} from '@podcast-framework/sanity-schema';
 
 export default defineConfig({
   name: 'default',
-  title: 'My Podcast',  // Studio title
+  title: 'My Podcast',
 
-  projectId: process.env.PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.PUBLIC_SANITY_DATASET || 'production',
+  // Uses environment variables from .env.local
+  projectId: process.env.SANITY_PROJECT_ID || '',
+  dataset: process.env.SANITY_DATASET || 'production',
 
   plugins: [
-    structureTool(),  // Document management UI
-    visionTool(),     // Query testing tool
+    structureTool(),
+    visionTool()
   ],
 
   schema: {
-    types: schemaTypes
-  },
+    types: [
+      podcast,
+      episode,
+      guest,
+      host,
+      contribution,
+    ]
+  }
 });
 ```
 
-### `schemas/index.ts`
+### `sanity/sanity.cli.ts`
 
-Schema registration:
+CLI configuration for deployment:
 
 ```typescript
-import {
-  episodeSchema,
-  guestSchema,
-  hostSchema,
-  podcastSchema,
-  contributionSchema,
-  themeSchema,
-  homepageConfigSchema,
-  aboutPageConfigSchema
-} from '@podcast-framework/sanity-schema';
+import { defineCliConfig } from 'sanity/cli';
 
-export const schemaTypes = [
-  episodeSchema,
-  guestSchema,
-  hostSchema,
-  podcastSchema,
-  contributionSchema,
-  themeSchema,
-  homepageConfigSchema,
-  aboutPageConfigSchema
-];
+export default defineCliConfig({
+  api: {
+    projectId: process.env.SANITY_PROJECT_ID || '',
+    dataset: process.env.SANITY_DATASET || 'production'
+  }
+});
 ```
+
+:::tip[Pre-configured]
+All configuration files are already set up in the template. You just need to add your Project ID to `.env.local`!
+:::
 
 ## API Tokens
 

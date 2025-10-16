@@ -103,6 +103,25 @@ Studio hostname: my-podcast
 
 Now you can access Studio from anywhere at your custom URL!
 
+:::danger[Cloud Deployment Requires Hardcoded Project ID]
+**IMPORTANT:** Cloud-deployed Studios don't have access to environment variables!
+
+Before deploying to Sanity Cloud, you **must** update `sanity.config.ts` to use hardcoded values:
+
+```typescript
+// Replace this:
+projectId: process.env.SANITY_PROJECT_ID || '',
+
+// With your actual project ID:
+projectId: 'abc123xyz',  // ← Your real project ID
+dataset: 'production',
+```
+
+Otherwise you'll see: `Configuration must contain projectId` error.
+
+See [Sanity Cloud Deployment Troubleshooting](/deployment/cloudflare-troubleshooting/#issue-8-sanity-studio-cloud-deployment-issues) for details.
+:::
+
 :::tip[Free Tier]
 Sanity's free tier includes unlimited Studio hosting. You can deploy as many Studios as you want.
 :::

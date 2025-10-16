@@ -312,6 +312,180 @@ NOTIFICATION_EMAIL=contribution@noreply.strangewater.xyz
 
 ---
 
+## Issue 8: Sanity Studio Cloud Deployment Issues
+
+### Problem 1: Missing React Dependencies
+
+**Error Message:**
+```
+Error: Cannot find module 'react/jsx-runtime'
+Module not found: Can't resolve 'react-dom'
+```
+
+#### Root Cause
+Sanity Studio v3+ requires `react` and `react-dom` as peer dependencies, but these aren't always included in project dependencies by default.
+
+#### Solution
+Add React dependencies to `package.json`:
+
+```bash
+npm install react react-dom
+```
+
+Or in package.json:
+```json
+{
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sanity": "^3.0.0"
+  }
+}
+```
+
+#### Files Affected
+- `package.json`
+
+#### Prevention
+- CLI v0.1.1+ automatically includes React dependencies
+- Template repository includes React dependencies by default
+
+---
+
+### Problem 2: Environment Variables Not Available in Cloud Studio
+
+**Error Message:**
+```json
+{
+  "error": {
+    "message": "Configuration must contain `projectId`"
+  }
+}
+```
+
+When visiting your deployed Studio at `https://your-podcast.sanity.studio`
+
+#### Root Cause
+Cloud-deployed Sanity Studios don't have access to environment variables (`process.env`). The configuration is bundled at build time, so references to `process.env.SANITY_PROJECT_ID` resolve to empty strings.
+
+#### Solution
+Replace environment variables with hardcoded values in `sanity.config.ts`:
+
+```typescript
+// ❌ WRONG - Doesn't work in cloud deployment
+export default defineConfig({
+  projectId: process.env.SANITY_PROJECT_ID || '',  // Empty string in cloud!
+  dataset: process.env.SANITY_DATASET || 'production',
+  // ...
+});
+
+// ✅ CORRECT - Hardcoded for cloud deployment
+export default defineConfig({
+  projectId: 'abc123xyz',  // Your actual project ID
+  dataset: 'production',
+  // ...
+});
+```
+
+**For local development with environment variables:**
+
+Keep the template version with env vars and add a warning comment:
+
+```typescript
+export default defineConfig({
+  name: 'default',
+  title: 'My Podcast',
+
+  // IMPORTANT: For cloud deployment to sanity.studio, replace
+  // process.env variables with actual hardcoded values
+  // Example: projectId: 'abc123xyz',
+  projectId: process.env.SANITY_PROJECT_ID || '',
+  dataset: process.env.SANITY_DATASET || 'production',
+
+  // ...
+});
+```
+
+#### Files Affected
+- `sanity.config.ts` (at project root)
+
+#### Prevention
+- Document cloud deployment requirements clearly
+- Consider maintaining separate configs for local vs cloud deployment
+- Add validation to check for empty project IDs
+
+---
+
+### Problem 3: Deployment Warnings - Missing App ID
+
+**Warning Message:**
+```
+✗ Failed to load configuration file "/path/to/sanity.config.ts"
+⚠ Configuration file not found
+```
+
+During `npm run sanity:deploy` even though deployment succeeds.
+
+#### Root Cause
+Missing `deployment.appId` in `sanity.cli.ts`. The CLI generates an app ID on first deployment but shows warnings if not configured.
+
+#### Solution
+Add deployment app ID to `sanity.cli.ts`:
+
+```typescript
+// Basic configuration (shows warnings)
+export default defineCliConfig({
+  api: {
+    projectId: "abc123xyz",
+    dataset: "production",
+  },
+});
+
+// ✅ CORRECT - With deployment app ID (no warnings)
+export default defineCliConfig({
+  api: {
+    projectId: "abc123xyz",
+    dataset: "production",
+  },
+  deployment: {
+    appId: "mec0q2oma8400ku8",  // Get this from first deployment output
+  },
+});
+```
+
+**How to get your app ID:**
+1. Run `npm run sanity:deploy` the first time
+2. Look for the app ID in the output:
+   ```
+   deployment: {
+     appId: "mec0q2oma8400ku8"
+   }
+   ```
+3. Add it to your `sanity.cli.ts`
+
+#### Files Affected
+- `sanity.cli.ts` (at project root)
+
+#### Prevention
+- CLI v0.1.1+ generates `sanity.cli.ts` with placeholder comments
+- Run initial deployment and capture the app ID immediately
+
+---
+
+### Complete Sanity Setup Checklist
+
+For successful Sanity Studio cloud deployment:
+
+- [ ] Install React dependencies (`react`, `react-dom`)
+- [ ] Replace `process.env` variables with hardcoded values in `sanity.config.ts`
+- [ ] Create `sanity.cli.ts` with project ID and dataset
+- [ ] Run `npm run sanity:deploy` to get deployment app ID
+- [ ] Add deployment app ID to `sanity.cli.ts`
+- [ ] Verify Studio accessible at `https://your-podcast.sanity.studio`
+- [ ] Test creating and editing content in cloud Studio
+
+---
+
 ## Platform Differences Summary
 
 | Feature | Netlify | Cloudflare Pages |
@@ -385,6 +559,6 @@ When migrating to a new hosting platform, verify:
 
 ---
 
-**Last Updated:** 2025-10-09
-**Migration:** Netlify → Cloudflare Pages
+**Last Updated:** 2025-10-16
+**Migration:** Netlify → Cloudflare Pages + Sanity Studio Cloud Deployment
 **Status:** ✅ Resolved

@@ -117,7 +117,7 @@ PUBLIC_*  # All variables starting with PUBLIC_
 const projectId = import.meta.env.PUBLIC_SANITY_PROJECT_ID;
 
 // ✅ Also available on server
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 const projectId = getEnv('PUBLIC_SANITY_PROJECT_ID', context);
 ```
 
@@ -135,7 +135,7 @@ SENTRY_DSN="..."
 **Example:**
 ```typescript
 // ✅ Works in API routes
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 const apiKey = getEnv('RESEND_API_KEY', context);
 
 // ❌ NOT accessible in browser
@@ -160,7 +160,7 @@ Always use private variables (without PUBLIC_ prefix).
 
 **Access in code:**
 ```typescript
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   const apiKey = getEnv('API_KEY', context);  // ✅ Works
@@ -177,7 +177,7 @@ export const POST: APIRoute = async (context) => {
 
 **Access in code:**
 ```typescript
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 
 export const handler = async (event, context) => {
   const apiKey = getEnv('API_KEY');  // ✅ Works
@@ -193,7 +193,7 @@ export const handler = async (event, context) => {
 
 **Access in code:**
 ```typescript
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 
 export default async function handler(req, res) {
   const apiKey = getEnv('API_KEY');  // ✅ Works
@@ -325,7 +325,7 @@ Check Sanity audit logs:
 
 ```typescript
 // In API route
-import { getRequiredEnv } from '@podcast-framework/core';
+import { getRequiredEnv } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   try {
@@ -373,7 +373,7 @@ const hasAnalytics = !!import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 **Check using hosting adapter:**
 ```typescript
 // ✅ Platform-agnostic (works everywhere)
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 const apiKey = getEnv('API_KEY', context);
 
 // ❌ Platform-specific (breaks on Cloudflare)

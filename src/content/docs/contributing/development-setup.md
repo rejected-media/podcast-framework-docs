@@ -34,9 +34,9 @@ This installs dependencies for all packages in the monorepo.
 ```
 podcast-framework/
 ├── packages/
-│   ├── core/              # @podcast-framework/core
-│   ├── sanity-schema/     # @podcast-framework/sanity-schema
-│   └── cli/               # @podcast-framework/cli
+│   ├── core/              # @rejected-media/podcast-framework-core
+│   ├── sanity-schema/     # @rejected-media/podcast-framework-sanity-schema
+│   └── cli/               # @rejected-media/podcast-framework-cli
 ├── package.json           # Monorepo config
 └── README.md
 ```
@@ -75,7 +75,7 @@ npm run build
 npm link
 
 # In your test podcast
-npm link @podcast-framework/core
+npm link @rejected-media/podcast-framework-core
 ```
 
 Now your test podcast uses your local development version!

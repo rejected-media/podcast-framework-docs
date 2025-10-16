@@ -15,7 +15,7 @@ import {
   generateThemeCSS,
   getGoogleFontsURL,
   mergeTheme
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 ```
 
 ## Theme Object
@@ -80,7 +80,7 @@ export const defaultTheme: Theme = {
 **Usage:**
 ```astro
 ---
-import { defaultTheme } from '@podcast-framework/core';
+import { defaultTheme } from '@rejected-media/podcast-framework-core';
 
 // Use as fallback
 const theme = podcast?.theme || defaultTheme;
@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 **Usage in BaseLayout:**
 ```astro
 ---
-import { getPodcast, generateThemeCSS, defaultTheme } from '@podcast-framework/core';
+import { getPodcast, generateThemeCSS, defaultTheme } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const theme = podcast?.theme || defaultTheme;
@@ -200,7 +200,7 @@ getGoogleFontsURL([])
 **Usage:**
 ```astro
 ---
-import { getGoogleFontsURL } from '@podcast-framework/core';
+import { getGoogleFontsURL } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const fonts = [
@@ -242,7 +242,7 @@ function mergeTheme(
 
 **Examples:**
 ```typescript
-import { defaultTheme, mergeTheme } from '@podcast-framework/core';
+import { defaultTheme, mergeTheme } from '@rejected-media/podcast-framework-core';
 
 // Override only primary color
 const customTheme = mergeTheme(defaultTheme, {
@@ -462,7 +462,7 @@ sanitizeFontFamily("'; alert('xss')")                // → "' alert('xss')"
 
 ```astro
 ---
-import { getPodcast, defaultTheme } from '@podcast-framework/core';
+import { getPodcast, defaultTheme } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const theme = podcast?.theme || defaultTheme;
@@ -473,7 +473,7 @@ const theme = podcast?.theme || defaultTheme;
 
 ```astro
 ---
-import { generateThemeCSS } from '@podcast-framework/core';
+import { generateThemeCSS } from '@rejected-media/podcast-framework-core';
 
 const themeCSS = generateThemeCSS(theme);
 ---
@@ -496,7 +496,7 @@ const themeCSS = generateThemeCSS(theme);
 ```astro
 ---
 // src/layouts/BaseLayout.astro
-import { getPodcast, generateThemeCSS, getGoogleFontsURL, defaultTheme } from '@podcast-framework/core';
+import { getPodcast, generateThemeCSS, getGoogleFontsURL, defaultTheme } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const theme = podcast?.theme || defaultTheme;
@@ -543,7 +543,7 @@ const googleFontsURL = getGoogleFontsURL(fonts);
 ### Example 1: Dark Theme
 
 ```typescript
-import { mergeTheme, defaultTheme } from '@podcast-framework/core';
+import { mergeTheme, defaultTheme } from '@rejected-media/podcast-framework-core';
 
 const darkTheme = mergeTheme(defaultTheme, {
   colors: {
@@ -560,7 +560,7 @@ const darkTheme = mergeTheme(defaultTheme, {
 ### Example 2: Brand Colors
 
 ```typescript
-import { mergeTheme, defaultTheme } from '@podcast-framework/core';
+import { mergeTheme, defaultTheme } from '@rejected-media/podcast-framework-core';
 
 const brandTheme = mergeTheme(defaultTheme, {
   colors: {
@@ -574,7 +574,7 @@ const brandTheme = mergeTheme(defaultTheme, {
 ### Example 3: Custom Fonts
 
 ```typescript
-import { mergeTheme, defaultTheme, getGoogleFontsURL } from '@podcast-framework/core';
+import { mergeTheme, defaultTheme, getGoogleFontsURL } from '@rejected-media/podcast-framework-core';
 
 const customFontTheme = mergeTheme(defaultTheme, {
   typography: {
@@ -590,7 +590,7 @@ const fontsURL = getGoogleFontsURL(['Roboto', 'Montserrat']);
 ### Example 4: Layout Variations
 
 ```typescript
-import { mergeTheme, defaultTheme } from '@podcast-framework/core';
+import { mergeTheme, defaultTheme } from '@rejected-media/podcast-framework-core';
 
 // Rounded corners
 const roundedTheme = mergeTheme(defaultTheme, {
@@ -686,7 +686,7 @@ Then use in classes:
 
 ```astro
 ---
-import { defaultTheme, generateThemeCSS } from '@podcast-framework/core';
+import { defaultTheme, generateThemeCSS } from '@rejected-media/podcast-framework-core';
 
 const themes = [
   defaultTheme,
@@ -717,7 +717,7 @@ const themes = [
 <button id="toggle-theme">Toggle Theme</button>
 
 <script>
-  import { defaultTheme, darkTheme, generateThemeCSS } from '@podcast-framework/core';
+  import { defaultTheme, darkTheme, generateThemeCSS } from '@rejected-media/podcast-framework-core';
 
   let isDark = false;
 

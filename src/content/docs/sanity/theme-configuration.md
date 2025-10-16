@@ -174,7 +174,7 @@ Theme document in Sanity CMS.
 
 ```astro
 ---
-import { getPodcast } from '@podcast-framework/core';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const theme = podcast?.theme;
@@ -185,7 +185,7 @@ const theme = podcast?.theme;
 
 ```astro
 ---
-import { generateThemeCSS } from '@podcast-framework/core';
+import { generateThemeCSS } from '@rejected-media/podcast-framework-core';
 
 const css = generateThemeCSS(theme);
 ---

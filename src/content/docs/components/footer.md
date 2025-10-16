@@ -21,7 +21,7 @@ The Footer component provides a comprehensive site footer with brand information
 
 ```astro
 ---
-import Footer from '@podcast-framework/core/components/Footer.astro';
+import Footer from '@rejected-media/podcast-framework-core/components/Footer.astro';
 ---
 
 <Footer siteName="My Podcast" />
@@ -114,7 +114,7 @@ Theme configuration for colors and layout.
 
 ```astro
 ---
-import { getPodcast } from '@podcast-framework/core';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 ---
@@ -143,9 +143,9 @@ Show the newsletter signup slot.
 
 ```astro
 ---
-import Footer from '@podcast-framework/core/components/Footer.astro';
-import NewsletterSignup from '@podcast-framework/core/components/NewsletterSignup.astro';
-import { getPodcast } from '@podcast-framework/core';
+import Footer from '@rejected-media/podcast-framework-core/components/Footer.astro';
+import NewsletterSignup from '@rejected-media/podcast-framework-core/components/NewsletterSignup.astro';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 
@@ -265,7 +265,7 @@ The footer provides a `newsletter` slot for custom newsletter signup:
 
 ```astro
 ---
-import NewsletterSignup from '@podcast-framework/core/components/NewsletterSignup.astro';
+import NewsletterSignup from '@rejected-media/podcast-framework-core/components/NewsletterSignup.astro';
 ---
 
 <Footer
@@ -343,7 +343,7 @@ const year = new Date().getFullYear();
 
 ```astro
 ---
-import FrameworkFooter from '@podcast-framework/core/components/Footer.astro';
+import FrameworkFooter from '@rejected-media/podcast-framework-core/components/Footer.astro';
 
 export interface Props {
   siteName: string;

@@ -209,8 +209,8 @@ Order: 4
 ```astro
 ---
 // src/pages/about.astro
-import { getPodcast, getAboutPageConfig } from '@podcast-framework/core';
-import BlockContent from '@podcast-framework/core/components/BlockContent.astro';
+import { getPodcast, getAboutPageConfig } from '@rejected-media/podcast-framework-core';
+import BlockContent from '@rejected-media/podcast-framework-core/components/BlockContent.astro';
 
 const podcast = await getPodcast();
 const config = await getAboutPageConfig();

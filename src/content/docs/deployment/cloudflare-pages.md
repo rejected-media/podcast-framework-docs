@@ -497,7 +497,7 @@ PUBLIC_SANITY_PROJECT_ID = abc123
 **Check 3:** Using hosting adapter
 ```typescript
 // ✅ Cloudflare-compatible
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 const id = getEnv('PUBLIC_SANITY_PROJECT_ID', context);
 
 // ❌ Won't work on Cloudflare

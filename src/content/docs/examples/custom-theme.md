@@ -245,7 +245,7 @@ Use different theme for specific pages:
 ```astro
 ---
 // src/pages/special.astro
-import { mergeTheme, defaultTheme, generateThemeCSS } from '@podcast-framework/core';
+import { mergeTheme, defaultTheme, generateThemeCSS } from '@rejected-media/podcast-framework-core';
 
 const pageTheme = mergeTheme(defaultTheme, {
   colors: {

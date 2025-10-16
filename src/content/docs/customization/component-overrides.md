@@ -16,7 +16,7 @@ The framework uses a resolution system that checks your project first:
    ↓ Found? Use it!
    ↓ Not found? Continue...
 
-2. Check: node_modules/@podcast-framework/core/components/Header.astro
+2. Check: node_modules/@rejected-media/podcast-framework-core/components/Header.astro
    ↓ Use framework version
 ```
 
@@ -71,7 +71,7 @@ Framework automatically uses your version:
 ```astro
 ---
 // In your page
-import Header from '@podcast-framework/core/components/Header.astro';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
 // → Actually loads src/components/Header.astro (your override)
 ---
 
@@ -113,7 +113,7 @@ Import and wrap framework component:
 ```astro
 ---
 // src/components/Header.astro
-import FrameworkHeader from '@podcast-framework/core/components/Header.astro';
+import FrameworkHeader from '@rejected-media/podcast-framework-core/components/Header.astro';
 
 export interface Props {
   siteName: string;
@@ -143,7 +143,7 @@ Copy framework component and modify:
 
 ```bash
 # Copy framework component
-cp node_modules/@podcast-framework/core/components/Header.astro src/components/
+cp node_modules/@rejected-media/podcast-framework-core/components/Header.astro src/components/
 
 # Modify as needed
 code src/components/Header.astro
@@ -194,7 +194,7 @@ const { siteName, navigation = [] } = Astro.props;
 ```astro
 ---
 // src/components/Footer.astro
-import FrameworkFooter from '@podcast-framework/core/components/Footer.astro';
+import FrameworkFooter from '@rejected-media/podcast-framework-core/components/Footer.astro';
 
 export interface Props {
   siteName: string;
@@ -224,7 +224,7 @@ const { showSponsors, ...rest } = Astro.props;
 ```astro
 ---
 // src/components/NewsletterSignup.astro
-import FrameworkNewsletter from '@podcast-framework/core/components/NewsletterSignup.astro';
+import FrameworkNewsletter from '@rejected-media/podcast-framework-core/components/NewsletterSignup.astro';
 
 export interface Props {
   variant?: 'inline' | 'footer';
@@ -256,7 +256,7 @@ const { customSuccessMessage, ...rest } = Astro.props;
 ```astro
 ---
 // src/components/EpisodeSearch.astro
-import FrameworkSearch from '@podcast-framework/core/components/EpisodeSearch.astro';
+import FrameworkSearch from '@rejected-media/podcast-framework-core/components/EpisodeSearch.astro';
 
 export interface Props {
   placeholder?: string;
@@ -316,7 +316,7 @@ export interface Props {
 npm run build
 
 # Check build output
-ls -la node_modules/@podcast-framework/core/components/Header.astro
+ls -la node_modules/@rejected-media/podcast-framework-core/components/Header.astro
 ls -la src/components/Header.astro
 
 # If src/components/Header.astro exists, it's used ✅
@@ -329,7 +329,7 @@ ls -la src/components/Header.astro
 // Add logging
 console.log('Using custom Header override');
 
-import { hasOverride } from '@podcast-framework/core';
+import { hasOverride } from '@rejected-media/podcast-framework-core';
 console.log('Has override?', hasOverride('Header'));
 ---
 ```
@@ -455,7 +455,7 @@ const useBeta = import.meta.env.PUBLIC_USE_BETA_HEADER;
 
 if (!useBeta) {
   // Use framework version
-  import FrameworkHeader from '@podcast-framework/core/components/Header.astro';
+  import FrameworkHeader from '@rejected-media/podcast-framework-core/components/Header.astro';
   export default FrameworkHeader;
 }
 
@@ -485,7 +485,7 @@ Wrap framework component for consistent modifications:
 ```astro
 ---
 // src/components/HeaderWrapper.astro
-import Header from '@podcast-framework/core/components/Header.astro';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
 
 export interface Props {
   siteName: string;

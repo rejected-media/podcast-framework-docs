@@ -22,7 +22,7 @@ The TranscriptViewer component displays episode transcripts in a collapsible, se
 
 ```astro
 ---
-import TranscriptViewer from '@podcast-framework/core/components/TranscriptViewer.astro';
+import TranscriptViewer from '@rejected-media/podcast-framework-core/components/TranscriptViewer.astro';
 
 const episode = await getEpisode(Astro.params.slug);
 ---
@@ -86,9 +86,9 @@ interface TranscriptSegment {
 
 ```astro
 ---
-import { getEpisode } from '@podcast-framework/core';
-import TranscriptViewer from '@podcast-framework/core/components/TranscriptViewer.astro';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import { getEpisode } from '@rejected-media/podcast-framework-core';
+import TranscriptViewer from '@rejected-media/podcast-framework-core/components/TranscriptViewer.astro';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 const episode = await getEpisode(Astro.params.slug);
 ---

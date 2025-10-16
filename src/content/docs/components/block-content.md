@@ -22,7 +22,7 @@ The BlockContent component renders Sanity's portable text (block content) into H
 
 ```astro
 ---
-import BlockContent from '@podcast-framework/core/components/BlockContent.astro';
+import BlockContent from '@rejected-media/podcast-framework-core/components/BlockContent.astro';
 
 const episode = await getEpisode(Astro.params.slug);
 ---
@@ -63,9 +63,9 @@ Custom CSS classes to apply to the container.
 
 ```astro
 ---
-import { getEpisode } from '@podcast-framework/core';
-import BlockContent from '@podcast-framework/core/components/BlockContent.astro';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import { getEpisode } from '@rejected-media/podcast-framework-core';
+import BlockContent from '@rejected-media/podcast-framework-core/components/BlockContent.astro';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 const episode = await getEpisode(Astro.params.slug);
 ---

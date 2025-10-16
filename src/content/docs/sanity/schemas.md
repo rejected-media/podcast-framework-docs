@@ -249,7 +249,7 @@ Extend any schema with custom fields:
 
 ```typescript
 // sanity/schemas/index.ts
-import { extendEpisodeSchema } from '@podcast-framework/sanity-schema';
+import { extendEpisodeSchema } from '@rejected-media/podcast-framework-sanity-schema';
 import { defineField } from 'sanity';
 
 const episodeWithSponsor = extendEpisodeSchema([
@@ -276,7 +276,7 @@ export const schemaTypes = [
 ### Example: Add Custom Guest Field
 
 ```typescript
-import { extendGuestSchema } from '@podcast-framework/sanity-schema';
+import { extendGuestSchema } from '@rejected-media/podcast-framework-sanity-schema';
 
 const guestWithCompany = extendGuestSchema([
   defineField({

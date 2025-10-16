@@ -142,9 +142,9 @@ basic-podcast/
 ```astro
 ---
 // src/pages/index.astro
-import { getPodcast, getEpisodes, getFeatured } from '@podcast-framework/core';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
-import FeaturedEpisodesCarousel from '@podcast-framework/core/components/FeaturedEpisodesCarousel.astro';
+import { getPodcast, getEpisodes, getFeatured } from '@rejected-media/podcast-framework-core';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
+import FeaturedEpisodesCarousel from '@rejected-media/podcast-framework-core/components/FeaturedEpisodesCarousel.astro';
 
 const podcast = await getPodcast();
 const featured = await getFeatured(3);
@@ -199,9 +199,9 @@ const recent = (await getEpisodes()).slice(0, 6);
 ```astro
 ---
 // src/pages/episodes/index.astro
-import { getEpisodes, getPodcast, formatDate } from '@podcast-framework/core';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
-import EpisodeSearch from '@podcast-framework/core/components/EpisodeSearch.astro';
+import { getEpisodes, getPodcast, formatDate } from '@rejected-media/podcast-framework-core';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
+import EpisodeSearch from '@rejected-media/podcast-framework-core/components/EpisodeSearch.astro';
 
 const episodes = await getEpisodes();
 const podcast = await getPodcast();
@@ -251,7 +251,7 @@ const podcast = await getPodcast();
 
 ```astro
 // src/pages/sponsors.astro
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 <BaseLayout title="Sponsors">
   <h1>Our Sponsors</h1>

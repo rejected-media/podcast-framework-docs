@@ -21,7 +21,7 @@ The SkeletonLoader component provides loading placeholder UI while content is be
 
 ```astro
 ---
-import SkeletonLoader from '@podcast-framework/core/components/SkeletonLoader.astro';
+import SkeletonLoader from '@rejected-media/podcast-framework-core/components/SkeletonLoader.astro';
 ---
 
 <SkeletonLoader variant="episode-card" count={3} />
@@ -139,8 +139,8 @@ Guest profile card with photo:
 
 ```astro
 ---
-import { getEpisodes } from '@podcast-framework/core';
-import SkeletonLoader from '@podcast-framework/core/components/SkeletonLoader.astro';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
+import SkeletonLoader from '@rejected-media/podcast-framework-core/components/SkeletonLoader.astro';
 
 const episodes = Astro.url.searchParams.has('preview')
   ? null
@@ -166,9 +166,9 @@ const episodes = Astro.url.searchParams.has('preview')
 
 ```astro
 ---
-import { getFeatured } from '@podcast-framework/core';
-import FeaturedEpisodesCarousel from '@podcast-framework/core/components/FeaturedEpisodesCarousel.astro';
-import SkeletonLoader from '@podcast-framework/core/components/SkeletonLoader.astro';
+import { getFeatured } from '@rejected-media/podcast-framework-core';
+import FeaturedEpisodesCarousel from '@rejected-media/podcast-framework-core/components/FeaturedEpisodesCarousel.astro';
+import SkeletonLoader from '@rejected-media/podcast-framework-core/components/SkeletonLoader.astro';
 
 const featured = await getFeatured();
 ---
@@ -184,8 +184,8 @@ const featured = await getFeatured();
 
 ```astro
 ---
-import { getGuests } from '@podcast-framework/core';
-import SkeletonLoader from '@podcast-framework/core/components/SkeletonLoader.astro';
+import { getGuests } from '@rejected-media/podcast-framework-core';
+import SkeletonLoader from '@rejected-media/podcast-framework-core/components/SkeletonLoader.astro';
 
 const guests = await getGuests();
 ---
@@ -212,7 +212,7 @@ const guests = await getGuests();
 
 ```astro
 ---
-import SkeletonLoader from '@podcast-framework/core/components/SkeletonLoader.astro';
+import SkeletonLoader from '@rejected-media/podcast-framework-core/components/SkeletonLoader.astro';
 ---
 
 <div id="episodes-container">

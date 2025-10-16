@@ -199,7 +199,7 @@ Background: light
 ```astro
 ---
 // src/pages/index.astro
-import { getPodcast, getHomepageConfig, getFeatured, getEpisodes } from '@podcast-framework/core';
+import { getPodcast, getHomepageConfig, getFeatured, getEpisodes } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const config = await getHomepageConfig();

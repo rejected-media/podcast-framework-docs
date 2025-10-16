@@ -21,7 +21,7 @@ The NewsletterSignup component provides an email subscription form with two visu
 
 ```astro
 ---
-import NewsletterSignup from '@podcast-framework/core/components/NewsletterSignup.astro';
+import NewsletterSignup from '@rejected-media/podcast-framework-core/components/NewsletterSignup.astro';
 ---
 
 <NewsletterSignup />
@@ -78,7 +78,7 @@ Submit button text.
 
 ```astro
 ---
-import NewsletterSignup from '@podcast-framework/core/components/NewsletterSignup.astro';
+import NewsletterSignup from '@rejected-media/podcast-framework-core/components/NewsletterSignup.astro';
 ---
 
 <div class="bg-blue-50 rounded-lg p-8 text-center">
@@ -218,7 +218,7 @@ The component submits to `/api/newsletter-subscribe`:
 ```typescript
 // src/pages/api/newsletter-subscribe.ts
 import type { APIRoute } from 'astro';
-import { NewsletterService } from '@podcast-framework/core';
+import { NewsletterService } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async ({ request }) => {
   const { email } = await request.json();

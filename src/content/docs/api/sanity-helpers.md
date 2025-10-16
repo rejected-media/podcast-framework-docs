@@ -17,7 +17,7 @@ import {
   getGuest,
   getPodcast,
   getFeatured
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 ```
 
 ## Why Use Helpers?
@@ -26,7 +26,7 @@ import {
 
 ```astro
 ---
-import { createSanityClient, getAllEpisodes } from '@podcast-framework/core';
+import { createSanityClient, getAllEpisodes } from '@rejected-media/podcast-framework-core';
 
 const sanityClient = createSanityClient({
   projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
@@ -43,7 +43,7 @@ const episodes = await getAllEpisodes(sanityClient);
 
 ```astro
 ---
-import { getEpisodes } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
 
 const episodes = await getEpisodes();
 ---
@@ -72,7 +72,7 @@ function getEpisodes(options?: {
 **Examples:**
 ```astro
 ---
-import { getEpisodes } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
 
 // Get all episodes (newest first)
 const episodes = await getEpisodes();
@@ -130,7 +130,7 @@ function getEpisode(slug: string): Promise<Episode | null>
 **Examples:**
 ```astro
 ---
-import { getEpisode } from '@podcast-framework/core';
+import { getEpisode } from '@rejected-media/podcast-framework-core';
 
 const episode = await getEpisode('the-future-of-ethereum');
 
@@ -168,7 +168,7 @@ function getGuests(): Promise<Guest[]>
 **Examples:**
 ```astro
 ---
-import { getGuests } from '@podcast-framework/core';
+import { getGuests } from '@rejected-media/podcast-framework-core';
 
 const guests = await getGuests();
 ---
@@ -214,7 +214,7 @@ function getGuest(slug: string): Promise<Guest | null>
 **Examples:**
 ```astro
 ---
-import { getGuest } from '@podcast-framework/core';
+import { getGuest } from '@rejected-media/podcast-framework-core';
 
 const guest = await getGuest('vitalik-buterin');
 
@@ -260,7 +260,7 @@ function getPodcast(): Promise<PodcastInfo | undefined>
 **Examples:**
 ```astro
 ---
-import { getPodcast } from '@podcast-framework/core';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const siteName = podcast?.name || 'Podcast';
@@ -307,7 +307,7 @@ function getFeatured(limit?: number): Promise<Episode[]>
 **Examples:**
 ```astro
 ---
-import { getFeatured } from '@podcast-framework/core';
+import { getFeatured } from '@rejected-media/podcast-framework-core';
 
 // Get all featured episodes
 const featured = await getFeatured();
@@ -392,10 +392,10 @@ import {
   getPodcast,
   getEpisodes,
   getFeatured
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
-import FeaturedEpisodesCarousel from '@podcast-framework/core/components/FeaturedEpisodesCarousel.astro';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
+import FeaturedEpisodesCarousel from '@rejected-media/podcast-framework-core/components/FeaturedEpisodesCarousel.astro';
 
 // Fetch all data (cached automatically)
 const podcast = await getPodcast();
@@ -641,7 +641,7 @@ For advanced queries, use low-level functions:
 import {
   createSanityClient,
   getAllEpisodes
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 
 const client = createSanityClient({
   projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,

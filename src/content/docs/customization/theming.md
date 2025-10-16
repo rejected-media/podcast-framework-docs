@@ -339,7 +339,7 @@ Implement dark mode with theme switching:
 
 ```astro
 ---
-import { mergeTheme, defaultTheme } from '@podcast-framework/core';
+import { mergeTheme, defaultTheme } from '@rejected-media/podcast-framework-core';
 
 const darkTheme = mergeTheme(defaultTheme, {
   colors: {
@@ -385,7 +385,7 @@ Different theme for different pages:
 ```astro
 ---
 // src/pages/special.astro
-import { mergeTheme, defaultTheme, generateThemeCSS } from '@podcast-framework/core';
+import { mergeTheme, defaultTheme, generateThemeCSS } from '@rejected-media/podcast-framework-core';
 
 const specialTheme = mergeTheme(defaultTheme, {
   colors: {

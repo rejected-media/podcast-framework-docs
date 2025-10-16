@@ -21,7 +21,7 @@ The Header component provides a responsive navigation header with logo support, 
 
 ```astro
 ---
-import Header from '@podcast-framework/core/components/Header.astro';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
 ---
 
 <Header siteName="My Podcast" />
@@ -116,7 +116,7 @@ Theme object controlling colors, fonts, and layout.
 
 ```astro
 ---
-import { getPodcast } from '@podcast-framework/core';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 ---
@@ -131,8 +131,8 @@ const podcast = await getPodcast();
 
 ```astro
 ---
-import Header from '@podcast-framework/core/components/Header.astro';
-import { getPodcast } from '@podcast-framework/core';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 
@@ -297,7 +297,7 @@ const { siteName } = Astro.props;
 ```astro
 ---
 // Extend framework component
-import FrameworkHeader from '@podcast-framework/core/components/Header.astro';
+import FrameworkHeader from '@rejected-media/podcast-framework-core/components/Header.astro';
 
 export interface Props {
   siteName: string;

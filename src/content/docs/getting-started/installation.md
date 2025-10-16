@@ -101,7 +101,7 @@ npm create astro@latest my-podcast
 cd my-podcast
 
 # Install Podcast Framework packages
-npm install @podcast-framework/core @podcast-framework/sanity-schema
+npm install @rejected-media/podcast-framework-core @rejected-media/podcast-framework-sanity-schema
 
 # Install peer dependencies
 npm install @sanity/client @sanity/cli
@@ -219,14 +219,14 @@ RSS_FEED_URL="https://your-podcast.com/feed.xml"
 ### Check Dependencies
 
 ```bash
-npm list @podcast-framework/core
+npm list @rejected-media/podcast-framework-core
 ```
 
 Should output:
 
 ```
 my-podcast@1.0.0
-└── @podcast-framework/core@0.1.0
+└── @rejected-media/podcast-framework-core@0.1.0
 ```
 
 ### Start Dev Server
@@ -254,8 +254,8 @@ Current stable versions:
 ```json
 {
   "dependencies": {
-    "@podcast-framework/core": "^0.1.0",
-    "@podcast-framework/sanity-schema": "^1.0.0",
+    "@rejected-media/podcast-framework-core": "^0.1.0",
+    "@rejected-media/podcast-framework-sanity-schema": "^1.0.0",
     "@sanity/client": "^6.0.0",
     "astro": "^5.0.0"
   }
@@ -319,12 +319,12 @@ Use the legacy peer deps flag:
 npm install --legacy-peer-deps
 ```
 
-#### "Module not found: @podcast-framework/core"
+#### "Module not found: @rejected-media/podcast-framework-core"
 
 Make sure the package is installed:
 
 ```bash
-npm install @podcast-framework/core
+npm install @rejected-media/podcast-framework-core
 ```
 
 ### Sanity Issues
@@ -449,7 +449,7 @@ Add to `.vscode/settings.json`:
 ### Update Core Package
 
 ```bash
-npm update @podcast-framework/core
+npm update @rejected-media/podcast-framework-core
 ```
 
 ### Update All Packages

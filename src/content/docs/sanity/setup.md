@@ -248,7 +248,7 @@ import {
   host,
   podcast,
   contribution
-} from '@podcast-framework/sanity-schema';
+} from '@rejected-media/podcast-framework-sanity-schema';
 
 export default defineConfig({
   name: 'default',

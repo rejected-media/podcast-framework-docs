@@ -17,7 +17,7 @@ import {
   getClientIP,
   getPlatformInfo,
   logError
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 ```
 
 ## Why Use the Hosting Adapter?
@@ -36,7 +36,7 @@ const apiKey = context.locals.runtime.env.API_KEY;  // Cloudflare
 
 ```typescript
 // ✅ Works everywhere
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 
 const apiKey = getEnv('API_KEY', context);
 ```
@@ -67,7 +67,7 @@ type HostingPlatform = 'cloudflare' | 'netlify' | 'vercel' | 'local' | 'unknown'
 
 **Examples:**
 ```typescript
-import { detectPlatform } from '@podcast-framework/core';
+import { detectPlatform } from '@rejected-media/podcast-framework-core';
 
 const platform = detectPlatform();
 // → "cloudflare" | "netlify" | "vercel" | "local" | "unknown"
@@ -81,7 +81,7 @@ if (platform === 'cloudflare') {
 ```typescript
 // src/pages/api/example.ts
 import type { APIRoute } from 'astro';
-import { detectPlatform } from '@podcast-framework/core';
+import { detectPlatform } from '@rejected-media/podcast-framework-core';
 
 export const GET: APIRoute = async (context) => {
   const platform = detectPlatform(context);
@@ -115,7 +115,7 @@ function getEnv(
 
 **Examples:**
 ```typescript
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 
 // With fallback
 const apiKey = getEnv('API_KEY', context, 'default-key');
@@ -131,7 +131,7 @@ const required = getEnv('REQUIRED_VAR', context);
 ```typescript
 // src/pages/api/newsletter-subscribe.ts
 import type { APIRoute } from 'astro';
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   const apiKey = getEnv('CONVERTKIT_API_KEY', context);
@@ -167,7 +167,7 @@ function getRequiredEnv(
 
 **Examples:**
 ```typescript
-import { getRequiredEnv } from '@podcast-framework/core';
+import { getRequiredEnv } from '@rejected-media/podcast-framework-core';
 
 // Get multiple variables (throws if missing)
 const { API_KEY, API_SECRET, PROJECT_ID } = getRequiredEnv(
@@ -197,7 +197,7 @@ try {
 ```typescript
 // src/pages/api/contribute.ts
 import type { APIRoute } from 'astro';
-import { getRequiredEnv, ContributionService } from '@podcast-framework/core';
+import { getRequiredEnv, ContributionService } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   try {
@@ -241,7 +241,7 @@ function getClientIP(context: APIContext): string
 
 **Examples:**
 ```typescript
-import { getClientIP } from '@podcast-framework/core';
+import { getClientIP } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   const clientIP = getClientIP(context);
@@ -262,7 +262,7 @@ export const POST: APIRoute = async (context) => {
 
 **Usage - Rate Limiting:**
 ```typescript
-import { getClientIP } from '@podcast-framework/core';
+import { getClientIP } from '@rejected-media/podcast-framework-core';
 
 const rateLimits = new Map<string, number>();
 
@@ -301,7 +301,7 @@ function getPlatformInfo(context?: APIContext): {
 
 **Examples:**
 ```typescript
-import { getPlatformInfo } from '@podcast-framework/core';
+import { getPlatformInfo } from '@rejected-media/podcast-framework-core';
 
 const info = getPlatformInfo(context);
 
@@ -356,7 +356,7 @@ function logError(
 
 **Examples:**
 ```typescript
-import { logError } from '@podcast-framework/core';
+import { logError } from '@rejected-media/podcast-framework-core';
 
 try {
   await riskyOperation();
@@ -456,7 +456,7 @@ import {
   getClientIP,
   getPlatformInfo,
   logError
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   try {
@@ -527,7 +527,7 @@ Estimated: 2-4 hours
 ### Conditional Code
 
 ```typescript
-import { detectPlatform } from '@podcast-framework/core';
+import { detectPlatform } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   const platform = detectPlatform(context);
@@ -547,7 +547,7 @@ export const POST: APIRoute = async (context) => {
 ### Environment-Specific Behavior
 
 ```typescript
-import { getPlatformInfo } from '@podcast-framework/core';
+import { getPlatformInfo } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   const { isDevelopment, isProduction } = getPlatformInfo(context);
@@ -570,7 +570,7 @@ export const POST: APIRoute = async (context) => {
 ### Basic Logging
 
 ```typescript
-import { logError } from '@podcast-framework/core';
+import { logError } from '@rejected-media/podcast-framework-core';
 
 try {
   await riskyOperation();
@@ -617,7 +617,7 @@ logError(error, {
 If Sentry is initialized, errors automatically go to Sentry:
 
 ```typescript
-import { initSentry, logError } from '@podcast-framework/core';
+import { initSentry, logError } from '@rejected-media/podcast-framework-core';
 
 // Initialize Sentry once
 initSentry({
@@ -705,7 +705,7 @@ export const POST: APIRoute = async (context) => {
 
 // ❌ Don't use in client-side code
 <script>
-  import { getEnv } from '@podcast-framework/core';
+  import { getEnv } from '@rejected-media/podcast-framework-core';
   const apiKey = getEnv('API_KEY');  // Won't work, no context
 </script>
 ```

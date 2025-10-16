@@ -98,7 +98,7 @@ Test changes in your podcast:
 npm link
 
 # In your podcast
-npm link @podcast-framework/core
+npm link @rejected-media/podcast-framework-core
 ```
 
 ## Code Standards

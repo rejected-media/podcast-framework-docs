@@ -273,7 +273,7 @@ Stuck? Here's where to get help:
 
 ## Troubleshooting
 
-### "Module not found: @podcast-framework/core"
+### "Module not found: @rejected-media/podcast-framework-core"
 
 Make sure dependencies are installed:
 

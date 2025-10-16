@@ -19,7 +19,7 @@ import {
   slugify,
   parseDuration,
   formatDuration
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 ```
 
 ## Date & Time Functions
@@ -57,7 +57,7 @@ formatDate('2024-12-25', 'fr-FR')
 **Usage in Templates:**
 ```astro
 ---
-import { getEpisodes, formatDate } from '@podcast-framework/core';
+import { getEpisodes, formatDate } from '@rejected-media/podcast-framework-core';
 
 const episodes = await getEpisodes();
 ---
@@ -187,7 +187,7 @@ stripHTML('<script>alert("xss")</script>')
 **Usage:**
 ```astro
 ---
-import { stripHTML } from '@podcast-framework/core';
+import { stripHTML } from '@rejected-media/podcast-framework-core';
 ---
 
 <meta
@@ -317,7 +317,7 @@ truncate('Exact length', 12)
 **Usage:**
 ```astro
 ---
-import { truncate } from '@podcast-framework/core';
+import { truncate } from '@rejected-media/podcast-framework-core';
 ---
 
 <div class="episode-card">
@@ -463,7 +463,7 @@ const doc = {
 
 ```astro
 ---
-import { formatDate, truncate, stripHTML } from '@podcast-framework/core';
+import { formatDate, truncate, stripHTML } from '@rejected-media/podcast-framework-core';
 ---
 
 <article>
@@ -482,7 +482,7 @@ import { formatDate, truncate, stripHTML } from '@podcast-framework/core';
 
 ```astro
 ---
-import { formatDate, stripHTML, truncate } from '@podcast-framework/core';
+import { formatDate, stripHTML, truncate } from '@rejected-media/podcast-framework-core';
 
 const title = episode.title;
 const description = truncate(stripHTML(episode.description), 160);
@@ -502,7 +502,7 @@ const publishDate = formatDate(episode.publishDate, 'en-US');
 
 ```astro
 ---
-import { parseDuration, formatDuration } from '@podcast-framework/core';
+import { parseDuration, formatDuration } from '@rejected-media/podcast-framework-core';
 
 const seconds = parseDuration(episode.duration);
 const formatted = formatDuration(seconds);
@@ -519,7 +519,7 @@ const hours = Math.floor(seconds / 3600);
 
 ```typescript
 // In API route
-import { escapeHTML } from '@podcast-framework/core';
+import { escapeHTML } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.json();
@@ -545,7 +545,7 @@ export const POST: APIRoute = async ({ request }) => {
 All utilities are fully typed:
 
 ```typescript
-import type { Episode } from '@podcast-framework/core';
+import type { Episode } from '@rejected-media/podcast-framework-core';
 
 function processEpisode(episode: Episode): string {
   // TypeScript knows the shape of episode
@@ -697,7 +697,7 @@ All utilities have comprehensive test coverage:
 
 ```typescript
 import { test, expect } from 'vitest';
-import { slugify } from '@podcast-framework/core';
+import { slugify } from '@rejected-media/podcast-framework-core';
 
 test('slugify converts to lowercase', () => {
   expect(slugify('HELLO WORLD')).toBe('hello-world');

@@ -13,7 +13,7 @@ Static Paths helpers eliminate getStaticPaths() boilerplate for common patterns 
 import {
   getStaticPathsForEpisodes,
   getStaticPathsForGuests
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 ```
 
 ## Why Use Static Paths Helpers?
@@ -23,7 +23,7 @@ import {
 ```astro
 ---
 // src/pages/episodes/[slug].astro
-import { getEpisodes } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
 
 export async function getStaticPaths() {
   const episodes = await getEpisodes();
@@ -43,7 +43,7 @@ const { episode } = Astro.props;
 ```astro
 ---
 // src/pages/episodes/[slug].astro
-import { getStaticPathsForEpisodes } from '@podcast-framework/core';
+import { getStaticPathsForEpisodes } from '@rejected-media/podcast-framework-core';
 
 export const getStaticPaths = getStaticPathsForEpisodes;
 
@@ -73,8 +73,8 @@ function getStaticPathsForEpisodes(): Promise<Array<{
 ```astro
 ---
 // src/pages/episodes/[slug].astro
-import { getStaticPathsForEpisodes, formatDate } from '@podcast-framework/core';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import { getStaticPathsForEpisodes, formatDate } from '@rejected-media/podcast-framework-core';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 export const getStaticPaths = getStaticPathsForEpisodes;
 
@@ -136,8 +136,8 @@ function getStaticPathsForGuests(): Promise<Array<{
 ```astro
 ---
 // src/pages/guest/[slug].astro
-import { getStaticPathsForGuests } from '@podcast-framework/core';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import { getStaticPathsForGuests } from '@rejected-media/podcast-framework-core';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 export const getStaticPaths = getStaticPathsForGuests;
 
@@ -196,8 +196,8 @@ Full type safety for props:
 
 ```astro
 ---
-import type { Episode } from '@podcast-framework/core';
-import { getStaticPathsForEpisodes } from '@podcast-framework/core';
+import type { Episode } from '@rejected-media/podcast-framework-core';
+import { getStaticPathsForEpisodes } from '@rejected-media/podcast-framework-core';
 
 export const getStaticPaths = getStaticPathsForEpisodes;
 
@@ -217,8 +217,8 @@ const invalid = episode.xyz;  // ❌ TypeScript error
 ```astro
 ---
 // src/pages/featured/[slug].astro
-import { getEpisodes } from '@podcast-framework/core';
-import type { Episode } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
+import type { Episode } from '@rejected-media/podcast-framework-core';
 
 export async function getStaticPaths() {
   const episodes = await getEpisodes();
@@ -243,7 +243,7 @@ const { episode }: { episode: Episode } = Astro.props;
 ```astro
 ---
 // src/pages/episodes/page/[page].astro
-import { getEpisodes } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
 
 export async function getStaticPaths() {
   const episodes = await getEpisodes();
@@ -278,7 +278,7 @@ const { episodes, currentPage, totalPages } = Astro.props;
 ```astro
 ---
 // src/pages/archive/[year].astro
-import { getEpisodes } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
 
 export async function getStaticPaths() {
   const episodes = await getEpisodes();

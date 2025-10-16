@@ -22,8 +22,8 @@ The FeaturedEpisodesCarousel component displays featured episodes in a horizonta
 
 ```astro
 ---
-import { getFeatured } from '@podcast-framework/core';
-import FeaturedEpisodesCarousel from '@podcast-framework/core/components/FeaturedEpisodesCarousel.astro';
+import { getFeatured } from '@rejected-media/podcast-framework-core';
+import FeaturedEpisodesCarousel from '@rejected-media/podcast-framework-core/components/FeaturedEpisodesCarousel.astro';
 
 const featuredEpisodes = await getFeatured();
 ---
@@ -85,7 +85,7 @@ Theme configuration for colors and styling.
 
 ```astro
 ---
-import { getPodcast } from '@podcast-framework/core';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 ---
@@ -114,9 +114,9 @@ Auto-progression interval in milliseconds.
 
 ```astro
 ---
-import { getFeatured, getPodcast } from '@podcast-framework/core';
-import FeaturedEpisodesCarousel from '@podcast-framework/core/components/FeaturedEpisodesCarousel.astro';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import { getFeatured, getPodcast } from '@rejected-media/podcast-framework-core';
+import FeaturedEpisodesCarousel from '@rejected-media/podcast-framework-core/components/FeaturedEpisodesCarousel.astro';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 const featuredEpisodes = await getFeatured();
 const podcast = await getPodcast();

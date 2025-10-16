@@ -22,7 +22,7 @@ The EpisodeSearch component provides real-time, client-side search for filtering
 
 ```astro
 ---
-import EpisodeSearch from '@podcast-framework/core/components/EpisodeSearch.astro';
+import EpisodeSearch from '@rejected-media/podcast-framework-core/components/EpisodeSearch.astro';
 ---
 
 <EpisodeSearch />
@@ -69,9 +69,9 @@ Search input placeholder text.
 
 ```astro
 ---
-import { getEpisodes } from '@podcast-framework/core';
-import EpisodeSearch from '@podcast-framework/core/components/EpisodeSearch.astro';
-import { formatDate, stripHTML } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
+import EpisodeSearch from '@rejected-media/podcast-framework-core/components/EpisodeSearch.astro';
+import { formatDate, stripHTML } from '@rejected-media/podcast-framework-core';
 
 const episodes = await getEpisodes();
 ---
@@ -327,7 +327,7 @@ Frame rate: 60fps (smooth)
 
 ```astro
 ---
-import EpisodeSearch from '@podcast-framework/core/components/EpisodeSearch.astro';
+import EpisodeSearch from '@rejected-media/podcast-framework-core/components/EpisodeSearch.astro';
 ---
 
 <div class="flex flex-col md:flex-row gap-4 mb-8">

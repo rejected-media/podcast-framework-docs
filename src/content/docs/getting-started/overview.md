@@ -26,11 +26,11 @@ Podcast Framework provides sensible defaults that work out of the box, but allow
 
 ```typescript
 // Works immediately
-import { getEpisodes } from '@podcast-framework/core';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
 const episodes = await getEpisodes();
 
 // Customize when needed
-import { getAllEpisodes } from '@podcast-framework/core';
+import { getAllEpisodes } from '@rejected-media/podcast-framework-core';
 const episodes = await getAllEpisodes(client, { orderBy: 'asc' });
 ```
 
@@ -44,7 +44,7 @@ my-podcast/
 │   └── components/
 │       └── Header.astro  <-- Your custom header
 └── node_modules/
-    └── @podcast-framework/core/
+    └── @rejected-media/podcast-framework-core/
         └── components/
             └── Header.astro  <-- Framework header (ignored)
 ```
@@ -67,7 +67,7 @@ This means non-developers can manage the site without touching code.
 The hosting adapter pattern means your code works everywhere:
 
 ```typescript
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 
 // Works on Cloudflare, Netlify, Vercel, and more
 const apiKey = getEnv('API_KEY');
@@ -79,7 +79,7 @@ No `process.env`, no `import.meta.env` - just platform-agnostic code.
 
 ### NPM Package Pattern
 
-Podcast Framework lives in `node_modules/@podcast-framework/`, not in your source code:
+Podcast Framework lives in `node_modules/@rejected-media/podcast-framework-`, not in your source code:
 
 - **Upgrades** - `npm update` to get new features
 - **No Merge Conflicts** - Your code stays separate
@@ -88,16 +88,16 @@ Podcast Framework lives in `node_modules/@podcast-framework/`, not in your sourc
 
 ### Three Packages
 
-1. **@podcast-framework/core** - Components, utilities, helpers
-2. **@podcast-framework/sanity-schema** - Sanity CMS schemas
-3. **@podcast-framework/cli** - Command-line tool for scaffolding
+1. **@rejected-media/podcast-framework-core** - Components, utilities, helpers
+2. **@rejected-media/podcast-framework-sanity-schema** - Sanity CMS schemas
+3. **@rejected-media/podcast-framework-cli** - Command-line tool for scaffolding
 
 ### Component Resolution
 
 The framework uses a clever resolution system:
 
 1. Check `src/components/ComponentName.astro` (your override)
-2. If not found, use `@podcast-framework/core/components/ComponentName.astro`
+2. If not found, use `@rejected-media/podcast-framework-core/components/ComponentName.astro`
 
 This happens automatically at build time using Astro's `import.meta.glob`.
 

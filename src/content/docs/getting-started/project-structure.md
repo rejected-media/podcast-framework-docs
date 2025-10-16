@@ -79,7 +79,7 @@ Your custom component overrides. When you create a component here with the same 
 src/components/
 └── Header.astro  ← Your custom header (overrides framework)
 
-node_modules/@podcast-framework/core/components/
+node_modules/@rejected-media/podcast-framework-core/components/
 └── Header.astro  ← Framework header (ignored when override exists)
 ```
 
@@ -116,13 +116,13 @@ sanity/
 - `sanity.config.ts` - Configure Sanity Studio appearance and behavior
 - `schemas/index.ts` - Register all schemas
 
-### `node_modules/@podcast-framework/`
+### `node_modules/@rejected-media/podcast-framework-`
 
 Framework packages installed via npm. **Don't edit these files directly** - they'll be overwritten on `npm install`.
 
 **Packages:**
 
-1. **@podcast-framework/core** - Main package
+1. **@rejected-media/podcast-framework-core** - Main package
    ```
    core/
    ├── components/     # 8 pre-built Astro components
@@ -139,7 +139,7 @@ Framework packages installed via npm. **Don't edit these files directly** - they
        └── services/          # ContributionService, NewsletterService
    ```
 
-2. **@podcast-framework/sanity-schema** - Sanity schemas
+2. **@rejected-media/podcast-framework-sanity-schema** - Sanity schemas
    ```
    sanity-schema/
    ├── schemas/       # Episode, Guest, Host, etc.
@@ -228,8 +228,8 @@ Dependencies and scripts:
     "import:episodes": "node scripts/import-episodes.js"
   },
   "dependencies": {
-    "@podcast-framework/core": "^0.1.0",
-    "@podcast-framework/sanity-schema": "^1.0.0",
+    "@rejected-media/podcast-framework-core": "^0.1.0",
+    "@rejected-media/podcast-framework-sanity-schema": "^1.0.0",
     "@sanity/client": "^6.0.0",
     "astro": "^5.0.0"
   }
@@ -258,7 +258,7 @@ Tailwind CSS configuration:
 export default {
   content: [
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    './node_modules/@podcast-framework/core/**/*.astro',
+    './node_modules/@rejected-media/podcast-framework-core/**/*.astro',
   ],
   theme: {
     extend: {},
@@ -266,13 +266,13 @@ export default {
 };
 ```
 
-**Important:** Include `node_modules/@podcast-framework/core/**/*.astro` so Tailwind processes framework components.
+**Important:** Include `node_modules/@rejected-media/podcast-framework-core/**/*.astro` so Tailwind processes framework components.
 
 ## Where Things Live
 
 ### Framework Code
 
-**Location:** `node_modules/@podcast-framework/`
+**Location:** `node_modules/@rejected-media/podcast-framework-`
 
 **What's there:**
 - All framework components
@@ -315,20 +315,20 @@ export default {
 
 ```typescript
 // Components
-import Header from '@podcast-framework/core/components/Header.astro';
-import Footer from '@podcast-framework/core/components/Footer.astro';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
+import Footer from '@rejected-media/podcast-framework-core/components/Footer.astro';
 
 // Layouts
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 // Utilities
-import { formatDate, slugify } from '@podcast-framework/core';
+import { formatDate, slugify } from '@rejected-media/podcast-framework-core';
 
 // Helpers
-import { getEpisodes, getPodcast } from '@podcast-framework/core';
+import { getEpisodes, getPodcast } from '@rejected-media/podcast-framework-core';
 
 // Server services
-import { ContributionService } from '@podcast-framework/core';
+import { ContributionService } from '@rejected-media/podcast-framework-core';
 ```
 
 ### Local Imports
@@ -344,7 +344,7 @@ import { myHelper } from '../lib/utils';
 ### Sanity Schemas
 
 ```typescript
-import { episodeSchema } from '@podcast-framework/sanity-schema';
+import { episodeSchema } from '@rejected-media/podcast-framework-sanity-schema';
 ```
 
 ## File Naming Conventions
@@ -377,8 +377,8 @@ import { episodeSchema } from '@podcast-framework/sanity-schema';
 ```astro
 ---
 // src/pages/about.astro
-import { getPodcast } from '@podcast-framework/core';
-import BaseLayout from '@podcast-framework/core/layouts/BaseLayout.astro';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
+import BaseLayout from '@rejected-media/podcast-framework-core/layouts/BaseLayout.astro';
 
 const podcast = await getPodcast();
 ---

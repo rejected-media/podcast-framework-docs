@@ -235,7 +235,7 @@ Edit `tailwind.config.mjs` to customize Tailwind:
 export default {
   content: [
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    './node_modules/@podcast-framework/core/**/*.astro',
+    './node_modules/@rejected-media/podcast-framework-core/**/*.astro',
   ],
   theme: {
     extend: {},
@@ -245,7 +245,7 @@ export default {
 ```
 
 :::danger[Critical]
-Always include `./node_modules/@podcast-framework/core/**/*.astro` in content paths!
+Always include `./node_modules/@rejected-media/podcast-framework-core/**/*.astro` in content paths!
 
 This ensures Tailwind processes framework components. Without it, framework styles won't work.
 :::
@@ -425,7 +425,7 @@ Create scripts in `scripts/` directory:
 
 ```javascript
 // scripts/my-script.js
-import { getPodcast } from '@podcast-framework/core';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 async function myScript() {
   const podcast = await getPodcast();
@@ -556,7 +556,7 @@ Don't hardcode:
 const API_KEY = 'sk_live_abc123';
 
 // ✅ Good
-import { getEnv } from '@podcast-framework/core';
+import { getEnv } from '@rejected-media/podcast-framework-core';
 const API_KEY = getEnv('API_KEY');
 ```
 
@@ -578,7 +578,7 @@ Check variables at build time:
 
 ```typescript
 // src/lib/config.ts
-import { getRequiredEnv } from '@podcast-framework/core';
+import { getRequiredEnv } from '@rejected-media/podcast-framework-core';
 
 export const config = {
   sanity: {
@@ -612,7 +612,7 @@ Ensure `tailwind.config.mjs` includes framework paths:
 ```javascript
 content: [
   './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-  './node_modules/@podcast-framework/core/**/*.astro', // ✅ Required
+  './node_modules/@rejected-media/podcast-framework-core/**/*.astro', // ✅ Required
 ]
 ```
 

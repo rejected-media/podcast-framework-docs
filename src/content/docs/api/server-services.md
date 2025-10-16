@@ -13,14 +13,14 @@ Server Services provide pure business logic for backend functionality like commu
 import {
   ContributionService,
   NewsletterService
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 
 import type {
   ContributionRequest,
   ContributionResult,
   NewsletterSubscribeRequest,
   NewsletterSubscribeResult
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 ```
 
 ## Why Use Services?
@@ -79,8 +79,8 @@ Handle community contributions (episode ideas, guest recommendations, questions,
 ### Configuration
 
 ```typescript
-import { ContributionService } from '@podcast-framework/core';
-import type { ContributionServiceConfig } from '@podcast-framework/core';
+import { ContributionService } from '@rejected-media/podcast-framework-core';
+import type { ContributionServiceConfig } from '@rejected-media/podcast-framework-core';
 
 const config: ContributionServiceConfig = {
   sanityProjectId: 'abc123',
@@ -152,7 +152,7 @@ interface ContributionResult {
 ```typescript
 // src/pages/api/contribute.ts
 import type { APIRoute } from 'astro';
-import { ContributionService, getRequiredEnv } from '@podcast-framework/core';
+import { ContributionService, getRequiredEnv } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   const env = getRequiredEnv([
@@ -210,8 +210,8 @@ Handle newsletter subscriptions via ConvertKit.
 ### Configuration
 
 ```typescript
-import { NewsletterService } from '@podcast-framework/core';
-import type { NewsletterServiceConfig } from '@podcast-framework/core';
+import { NewsletterService } from '@rejected-media/podcast-framework-core';
+import type { NewsletterServiceConfig } from '@rejected-media/podcast-framework-core';
 
 const config: NewsletterServiceConfig = {
   sanityProjectId: 'abc123',
@@ -256,7 +256,7 @@ interface NewsletterSubscribeResult {
 ```typescript
 // src/pages/api/newsletter-subscribe.ts
 import type { APIRoute } from 'astro';
-import { NewsletterService, getRequiredEnv } from '@podcast-framework/core';
+import { NewsletterService, getRequiredEnv } from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   const env = getRequiredEnv([
@@ -316,7 +316,7 @@ import {
   getRequiredEnv,
   getClientIP,
   logError
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   try {
@@ -386,7 +386,7 @@ import {
   getRequiredEnv,
   getClientIP,
   logError
-} from '@podcast-framework/core';
+} from '@rejected-media/podcast-framework-core';
 
 export const POST: APIRoute = async (context) => {
   try {
@@ -434,7 +434,7 @@ Services are pure business logic and easy to test:
 
 ```typescript
 import { describe, test, expect } from 'vitest';
-import { NewsletterService } from '@podcast-framework/core';
+import { NewsletterService } from '@rejected-media/podcast-framework-core';
 
 describe('NewsletterService', () => {
   test('validates email format', () => {
@@ -504,7 +504,7 @@ Services return structured error responses:
 
 ```typescript
 // src/lib/custom-contribution-service.ts
-import { ContributionService } from '@podcast-framework/core';
+import { ContributionService } from '@rejected-media/podcast-framework-core';
 
 export class CustomContributionService extends ContributionService {
   async submitContribution(request: ContributionRequest) {

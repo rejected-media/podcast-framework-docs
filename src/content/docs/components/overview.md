@@ -48,8 +48,8 @@ Podcast Framework includes **8 production-ready Astro components** that cover al
 
 ```astro
 ---
-import Header from '@podcast-framework/core/components/Header.astro';
-import Footer from '@podcast-framework/core/components/Footer.astro';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
+import Footer from '@rejected-media/podcast-framework-core/components/Footer.astro';
 ---
 
 <Header siteName="My Podcast" />
@@ -60,8 +60,8 @@ import Footer from '@podcast-framework/core/components/Footer.astro';
 
 ```astro
 ---
-import { getEpisodes } from '@podcast-framework/core';
-import EpisodeSearch from '@podcast-framework/core/components/EpisodeSearch.astro';
+import { getEpisodes } from '@rejected-media/podcast-framework-core';
+import EpisodeSearch from '@rejected-media/podcast-framework-core/components/EpisodeSearch.astro';
 
 const episodes = await getEpisodes();
 ---
@@ -98,8 +98,8 @@ Components respect the theme configured in Sanity CMS:
 
 ```astro
 ---
-import Header from '@podcast-framework/core/components/Header.astro';
-import { getPodcast } from '@podcast-framework/core';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const theme = podcast?.theme;
@@ -144,7 +144,7 @@ Use when you need a specific component:
 
 ```astro
 ---
-import Header from '@podcast-framework/core/components/Header.astro';
+import Header from '@rejected-media/podcast-framework-core/components/Header.astro';
 ---
 
 <Header siteName="My Podcast" />
@@ -156,7 +156,7 @@ Use in layouts for automatic override detection:
 
 ```astro
 ---
-import { getComponent } from '@podcast-framework/core';
+import { getComponent } from '@rejected-media/podcast-framework-core';
 
 const Header = getComponent('Header');
 const Footer = getComponent('Footer');
@@ -174,8 +174,8 @@ Show components based on data:
 
 ```astro
 ---
-import NewsletterSignup from '@podcast-framework/core/components/NewsletterSignup.astro';
-import { getPodcast } from '@podcast-framework/core';
+import NewsletterSignup from '@rejected-media/podcast-framework-core/components/NewsletterSignup.astro';
+import { getPodcast } from '@rejected-media/podcast-framework-core';
 
 const podcast = await getPodcast();
 const showNewsletter = podcast?.isActive;
@@ -245,7 +245,7 @@ const { siteName } = Astro.props;
 
 Copy framework component and modify:
 
-1. Copy `node_modules/@podcast-framework/core/components/Header.astro`
+1. Copy `node_modules/@rejected-media/podcast-framework-core/components/Header.astro`
 2. Paste to `src/components/Header.astro`
 3. Modify as needed
 
@@ -309,7 +309,7 @@ If overriding, keep it focused:
 ---
 // src/components/Header.astro
 // Import and extend framework component
-import FrameworkHeader from '@podcast-framework/core/components/Header.astro';
+import FrameworkHeader from '@rejected-media/podcast-framework-core/components/Header.astro';
 
 export interface Props {
   siteName: string;

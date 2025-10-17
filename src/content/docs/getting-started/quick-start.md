@@ -27,14 +27,23 @@ Use the Podcast Framework CLI to create a new project:
 npm create @rejected-media/podcast-framework my-podcast
 ```
 
+The CLI will prompt for a short description (or press Enter to use the default). That's it!
+
+:::tip[Skip prompts]
+Use the `--yes` flag to skip all prompts and use defaults:
+```bash
+npm create @rejected-media/podcast-framework my-podcast --yes
+```
+:::
+
 This will:
-- ✅ Clone the podcast-template repository
-- ✅ Install all dependencies
-- ✅ Set up the project structure
+- ✅ Create project structure
+- ✅ Generate configuration files
+- ✅ Set up with all features enabled (newsletter, search, contributions)
 - ✅ Create a `.env.template` file
 
 :::note
-The CLI uses the [podcast-template](https://github.com/rejected-media/podcast-template) as a starting point, giving you a complete, working podcast site immediately.
+All features are enabled by default. You can customize them later in `podcast.config.js`.
 :::
 
 ## Step 2: Navigate to Project

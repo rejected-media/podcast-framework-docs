@@ -46,12 +46,38 @@ npm create @rejected-media/podcast-framework my-podcast
 
 # Navigate to project
 cd my-podcast
-
-# Install dependencies
-npm install
 ```
 
-This uses the [podcast-template](https://github.com/rejected-media/podcast-template) repository as a starting point.
+**Interactive Prompts:**
+
+The CLI will ask for:
+- **Description** (optional with default) - Press Enter to use: `"my-podcast - A podcast built with @podcast-framework"`
+
+That's the only prompt! All features are enabled by default.
+
+**CLI Flags:**
+
+```bash
+# Skip all prompts (use defaults)
+npm create @rejected-media/podcast-framework my-podcast --yes
+
+# Use specific template (future feature)
+npm create @rejected-media/podcast-framework my-podcast --template advanced
+
+# Skip npm install
+npm create @rejected-media/podcast-framework my-podcast --skip-install
+```
+
+**What You Get:**
+
+- ✅ Complete project structure
+- ✅ All features enabled (newsletter, search, contributions, transcripts)
+- ✅ Configuration files (podcast.config.js, astro.config.mjs, .env.template)
+- ✅ Ready for Sanity CMS setup
+
+:::tip[Automation-Friendly]
+Use `--yes` flag in scripts and CI/CD pipelines for non-interactive project creation.
+:::
 
 ### Method 2: Clone Template
 

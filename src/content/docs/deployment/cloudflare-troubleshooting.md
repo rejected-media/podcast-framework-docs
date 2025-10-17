@@ -1,3 +1,8 @@
+---
+title: Cloudflare Troubleshooting
+description: Complete troubleshooting guide for Cloudflare Pages deployments and common issues
+---
+
 # Cloudflare Pages Deployment Troubleshooting Guide
 
 This document captures all issues encountered during the Netlify → Cloudflare migration and their solutions. Use this as a reference for future migrations or when debugging Cloudflare-specific issues.

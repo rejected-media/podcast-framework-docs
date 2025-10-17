@@ -86,11 +86,12 @@ Podcast Framework lives in `node_modules/@rejected-media/podcast-framework-`, no
 - **Type Safety** - Full TypeScript support via declaration files
 - **Semantic Versioning** - Clear versioning (`0.1.0`, `0.2.0`, etc.)
 
-### Three Packages
+### Four Packages
 
 1. **@rejected-media/podcast-framework-core** - Components, utilities, helpers
 2. **@rejected-media/podcast-framework-sanity-schema** - Sanity CMS schemas
-3. **@rejected-media/podcast-framework-cli** - Command-line tool for scaffolding
+3. **@rejected-media/podcast-framework-cli** - Command-line tool for project management
+4. **@rejected-media/create-podcast-framework** - NPM create wrapper for scaffolding
 
 ### Component Resolution
 

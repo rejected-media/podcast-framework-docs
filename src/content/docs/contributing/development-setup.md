@@ -34,10 +34,11 @@ This installs dependencies for all packages in the monorepo.
 ```
 podcast-framework/
 ├── packages/
-│   ├── core/              # @rejected-media/podcast-framework-core
-│   ├── sanity-schema/     # @rejected-media/podcast-framework-sanity-schema
-│   └── cli/               # @rejected-media/podcast-framework-cli
-├── package.json           # Monorepo config
+│   ├── core/                      # @rejected-media/podcast-framework-core
+│   ├── sanity-schema/             # @rejected-media/podcast-framework-sanity-schema
+│   ├── cli/                       # @rejected-media/podcast-framework-cli
+│   └── create-podcast-framework/  # @rejected-media/create-podcast-framework
+├── package.json                   # Monorepo config
 └── README.md
 ```
 

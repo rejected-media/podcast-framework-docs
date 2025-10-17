@@ -24,7 +24,7 @@ This entire guide takes **5-10 minutes** from start to finish.
 Use the Podcast Framework CLI to create a new project:
 
 ```bash
-npm create podcast-framework my-podcast
+npm create @rejected-media/podcast-framework my-podcast
 ```
 
 This will:

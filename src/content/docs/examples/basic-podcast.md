@@ -23,7 +23,7 @@ This example shows a complete, minimal podcast website using Podcast Framework. 
 ## Step 1: Create Project
 
 ```bash
-npm create podcast-framework basic-podcast
+npm create @rejected-media/podcast-framework basic-podcast
 cd basic-podcast
 npm install
 ```

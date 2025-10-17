@@ -42,7 +42,7 @@ The fastest way to get started:
 
 ```bash
 # Create new project
-npm create podcast-framework my-podcast
+npm create @rejected-media/podcast-framework my-podcast
 
 # Navigate to project
 cd my-podcast

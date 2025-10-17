@@ -1,3 +1,8 @@
+---
+title: Transcript Generation
+description: Guide for generating episode transcripts using OpenAI Whisper API
+---
+
 # Episode Transcript Generation
 
 This document explains how to generate episode transcripts using OpenAI's Whisper API.

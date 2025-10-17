@@ -1,3 +1,8 @@
+---
+title: Hosting Migration Checklist
+description: Complete checklist for migrating your podcast website between hosting platforms
+---
+
 # Hosting Platform Migration Checklist
 
 Use this checklist when migrating to a new hosting platform (Netlify, Cloudflare, Vercel, etc.).

@@ -149,10 +149,18 @@ The first time you run `npm run dev:sanity`, Sanity Studio will deploy your sche
 Have existing episodes? Import them from your RSS feed:
 
 ```bash
+# Add your RSS feed URL to .env
+echo 'RSS_FEED_URL="https://feeds.transistor.fm/your-show"' >> .env
+
+# Import all episodes
 npm run import:episodes
 ```
 
-This will fetch all episodes from your podcast RSS feed and create them in Sanity.
+The import will:
+- Fetch all episodes from your RSS feed
+- Create Episode documents in Sanity with full metadata
+- Download and upload cover images
+- Skip episodes that already exist (safe to run multiple times)
 :::
 
 ## Step 8: Add Your First Guest (Optional)
@@ -217,11 +225,16 @@ If you have an existing podcast RSS feed:
 
 ```bash
 # Set RSS_FEED_URL in .env
-echo 'RSS_FEED_URL="https://your-podcast.com/feed.xml"' >> .env
+echo 'RSS_FEED_URL="https://feeds.transistor.fm/your-show"' >> .env
 
-# Import episodes
+# Import episodes (includes images)
 npm run import:episodes
+
+# Or use command directly with options
+podcast-framework import-rss --feed https://feeds.transistor.fm/your-show --verbose
 ```
+
+Supported podcast hosts: Transistor (more coming soon)
 
 ### Set Up Newsletter
 

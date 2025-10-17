@@ -267,21 +267,45 @@ Same workflow, but set `isActive: false` in Podcast document.
 
 ### Import from RSS Feed
 
-Import existing episodes:
+Import existing episodes from your podcast host:
 
 ```bash
-# Set RSS feed URL
-echo 'RSS_FEED_URL="https://yourpodcast.com/feed.xml"' >> .env
+# Set RSS feed URL in .env
+echo 'RSS_FEED_URL="https://feeds.transistor.fm/your-show"' >> .env
 
-# Import all episodes
+# Import all episodes (first time)
 npm run import:episodes
+
+# Or use the command directly with options
+podcast-framework import-rss --feed https://feeds.transistor.fm/your-show --verbose
+
+# Preview import without making changes
+podcast-framework import-rss --dry-run
+
+# Update existing episodes
+podcast-framework import-rss --update
+
+# Skip image downloads
+podcast-framework import-rss --skip-images
 ```
 
 **What it does:**
-- Fetches RSS feed
-- Parses episode metadata
-- Creates Episode documents in Sanity
-- Links to existing Hosts (if found)
+- ✅ Fetches RSS feed from your podcast host
+- ✅ Parses episode metadata (title, number, date, duration, description)
+- ✅ Downloads and uploads cover images to Sanity
+- ✅ Creates Episode documents with audio URLs
+- ✅ Detects and skips existing episodes (using RSS GUID)
+- ✅ Works with incremental imports (safe to run multiple times)
+
+**Supported Podcast Hosts:**
+- **Transistor** - Full support for https://feeds.transistor.fm/ feeds
+- More hosts coming soon (easily extensible)
+
+**After Import:**
+- Episodes are created with basic metadata
+- Manually add guests and hosts in Sanity Studio
+- Manually add platform links (Spotify, Apple Podcasts, YouTube)
+- Review and update descriptions as needed
 
 ### Upload Guest Photos
 

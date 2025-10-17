@@ -224,16 +224,19 @@ Dependencies and scripts:
     "dev": "astro dev",
     "dev:sanity": "cd sanity && npx sanity dev",
     "build": "astro check && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "import:episodes": "podcast-framework import-rss"
   },
   "dependencies": {
-    "@podcast-framework/core": "^0.1.0",
-    "@podcast-framework/sanity-schema": "^1.0.0",
+    "@rejected-media/podcast-framework-cli": "^0.1.9",
+    "@rejected-media/podcast-framework-core": "^0.1.0",
+    "@rejected-media/podcast-framework-sanity-schema": "^1.1.0",
     "astro": "^5.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sanity": "^4.0.0",
-    "@sanity/client": "^6.0.0"
+    "@sanity/client": "^6.0.0",
+    "styled-components": "^6.1.15"
   }
 }
 ```

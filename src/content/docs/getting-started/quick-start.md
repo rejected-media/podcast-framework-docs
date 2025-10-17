@@ -52,69 +52,57 @@ All features are enabled by default. You can customize them later in `podcast.co
 cd my-podcast
 ```
 
-## Step 3: Set Up Sanity CMS
+## Step 3: Create Sanity Project
 
-Initialize your Sanity project:
+Create a new Sanity project at [sanity.io/manage](https://sanity.io/manage):
 
-```bash
-npx sanity@latest init
-```
+1. Click **"Create project"**
+2. Enter project name: `my-podcast`
+3. Choose **"Production"** dataset
+4. **Write down your Project ID** - you'll need it next!
 
-**Follow the prompts:**
-
-1. **Create new project?** → Yes
-2. **Project name** → `my-podcast` (or your podcast name)
-3. **Use default dataset?** → Yes
-4. **Output path** → `./sanity` (press Enter)
-5. **Select project template** → Clean project with no predefined schemas
-
-:::caution[Important]
-Write down your **Project ID** - you'll need it in the next step!
+:::tip[Project ID Location]
+After creating the project, you'll see your Project ID in the project settings or in the URL.
 :::
 
-## Step 4: Configure Environment Variables
+## Step 4: Add Your Project ID
 
-Create a `.env` file from the template:
+Update `sanity.config.ts` with your project ID:
+
+```typescript
+export default defineConfig({
+  name: 'default',
+  title: 'my-podcast',
+
+  projectId: 'abc123xyz',  // ← Replace with your actual Project ID
+  dataset: 'production',
+
+  // ...
+});
+```
+
+Also create a `.env` file:
 
 ```bash
 cp .env.template .env
 ```
 
-Edit `.env` and add your Sanity credentials:
+Add your project ID to `.env`:
 
 ```bash
-# Sanity CMS
-PUBLIC_SANITY_PROJECT_ID="your-project-id-here"  # From Step 3
-PUBLIC_SANITY_DATASET="production"
-PUBLIC_SANITY_API_VERSION="2024-01-01"
-
-# Site Configuration
-PUBLIC_SITE_URL="http://localhost:4321"
+SANITY_PROJECT_ID="abc123xyz"  # Your Project ID from Step 3
+SANITY_DATASET="production"
 ```
 
 :::tip
-The template includes commented examples for all optional services (Resend, ConvertKit, Google Analytics, Sentry). You can add these later!
+The `.env.template` includes examples for all optional services (Resend, ConvertKit, etc). Add these later!
 :::
 
-## Step 5: Deploy Sanity Schemas
-
-Deploy the podcast schemas to your Sanity project:
+## Step 5: Install Dependencies
 
 ```bash
-cd sanity
-npx sanity schema deploy
-cd ..
+npm install
 ```
-
-This adds schemas for:
-- Episodes
-- Guests
-- Hosts
-- Podcast metadata
-- Theme configuration
-- Homepage configuration
-- About page configuration
-- Contributions
 
 ## Step 6: Start Development Servers
 
@@ -131,6 +119,10 @@ npm run dev:sanity
 Your podcast site is now running at:
 - **Website:** http://localhost:4321
 - **Sanity Studio:** http://localhost:3333
+
+:::note[First Time Setup]
+The first time you run `npm run dev:sanity`, Sanity Studio will deploy your schemas automatically.
+:::
 
 ## Step 7: Add Your First Episode
 
@@ -163,20 +155,7 @@ npm run import:episodes
 This will fetch all episodes from your podcast RSS feed and create them in Sanity.
 :::
 
-## Step 8: Customize Your Theme
-
-1. In Sanity Studio, click **"Theme"** in the sidebar
-2. Customize colors:
-   - Primary color (links, buttons)
-   - Background color
-   - Text colors
-3. Select fonts (Google Fonts integration)
-4. Choose layout options
-5. Click **"Publish"**
-
-Refresh your website to see the changes!
-
-## Step 9: Add Your First Guest
+## Step 8: Add Your First Guest (Optional)
 
 1. Click **"Guest"** in the sidebar
 2. Click **"Create new Guest"**
@@ -190,6 +169,19 @@ Refresh your website to see the changes!
 5. Go back to your episode
 6. Add the guest to the episode's "Guests" field
 7. Click **"Publish"**
+
+## Step 9: Customize Your Theme
+
+1. In Sanity Studio, click **"Theme"** in the sidebar
+2. Customize colors:
+   - Primary color (links, buttons)
+   - Background color
+   - Text colors
+3. Select fonts (Google Fonts integration)
+4. Choose layout options
+5. Click **"Publish"**
+
+Refresh your website to see the changes!
 
 ## What You've Built
 

@@ -341,9 +341,9 @@ Or in package.json:
 ```json
 {
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "sanity": "^3.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^4.0.0"
   }
 }
 ```

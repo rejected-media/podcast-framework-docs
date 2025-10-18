@@ -90,12 +90,15 @@ cp .env.template .env
 Add your project ID to `.env`:
 
 ```bash
-SANITY_PROJECT_ID="abc123xyz"  # Your Project ID from Step 3
-SANITY_DATASET="production"
+PUBLIC_SANITY_PROJECT_ID="abc123xyz"  # Your Project ID from Step 3
+PUBLIC_SANITY_DATASET="production"
+PUBLIC_SANITY_API_VERSION="2024-01-01"
+
+SANITY_TOKEN="your_write_token"  # Optional: for RSS import
 ```
 
-:::tip
-The `.env.template` includes examples for all optional services (Resend, ConvertKit, etc). Add these later!
+:::tip[Important]
+Use **PUBLIC_** prefix for Sanity variables so they're accessible in the browser. The `.env.template` includes examples for all optional services (Resend, ConvertKit, etc). Add these later!
 :::
 
 ## Step 5: Install Dependencies

@@ -228,7 +228,7 @@ Dependencies and scripts:
     "import:episodes": "podcast-framework import-rss"
   },
   "dependencies": {
-    "@rejected-media/podcast-framework-cli": "^0.1.9",
+    "@rejected-media/podcast-framework-cli": "^0.1.10",
     "@rejected-media/podcast-framework-core": "^0.1.0",
     "@rejected-media/podcast-framework-sanity-schema": "^1.1.0",
     "astro": "^5.1.0",

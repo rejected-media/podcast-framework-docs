@@ -12,6 +12,29 @@ export default defineConfig({
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/rejected-media/podcast-framework' },
 			],
+			head: [
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: 'https://podcast-framework.rejected.media/og-image.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'twitter:image',
+						content: 'https://podcast-framework.rejected.media/og-image.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'twitter:card',
+						content: 'summary_large_image',
+					},
+				},
+			],
 			sidebar: [
 				{
 					label: 'Getting Started',

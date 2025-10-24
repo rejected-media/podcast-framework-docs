@@ -1,0 +1,22 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="1200" height="630" fill="#ffffff"/>
+
+    <!-- Top left branding -->
+    <g transform="translate(80, 80)">
+      <!-- Small square icon -->
+      <rect width="32" height="32" fill="#000000"/>
+      <!-- rexkirshner.com text -->
+      <text x="45" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600"
+  fill="#000000">rexkirshner.com</text>
+    </g>
+
+    <!-- Center content box -->
+    <rect x="150" y="200" width="900" height="230" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+
+    <!-- Main headline -->
+    <text x="600" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="90" font-weight="700"
+  fill="#000000" text-anchor="middle">New Podcast?</text>
+    <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="90" font-weight="700"
+  fill="#000000" text-anchor="middle">New Site.</text>
+  </svg>
